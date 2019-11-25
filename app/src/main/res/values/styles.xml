@@ -1,0 +1,188 @@
+<resources>
+    <style name="DialogAnimation">
+    <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+    <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+    <style name="DialogTheme">
+        <item name="android:windowEnterAnimation">@anim/slide_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_right</item>
+    </style>
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppTheme.PopupMenu</item>
+        <item name="colorControlNormal">#ffffffff</item>
+        <item name="android:textSize">13sp</item>
+
+    </style>
+    <style name="Chat_AppTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBarTheme</item>
+    </style>
+
+    <style name="MyActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/actionbar</item>
+        <item name="android:titleTextStyle">@style/TitleTextStyle</item>
+    </style>
+
+    <style name="TitleTextStyle" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/MyTitleTextStyle</item>
+
+    </style>
+
+    <style name="MyTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorTitleText</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.PopupMenu" parent="ThemeOverlay.AppCompat.Dark">
+        <!-- popup menu background - NEVER "android:background" !!! in themes -->
+        <item name="android:colorBackground">@color/colorPrimary</item>
+
+        <!-- popup menu item text color -->
+        <item name="android:textColorPrimary">@color/colorTitleText</item>
+    </style>
+
+    <style name="LightTextView" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/greyscale16</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+        <!-- Button -->
+    <style name="LightButton" parent="android:Widget.Button">
+        <item name="android:textColor">@color/greyscale16</item>
+        <!--<item name="android:background">@drawable/ic_action_action_info_outline</item>-->
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+    </style>
+
+    <style name="LightCheckBox" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="android:background">@color/greyscale2</item>
+    </style>
+
+    <style name="LightEditText" parent="android:style/Widget.EditText">
+        <item name="android:background">@color/greyscale1</item>
+        <item name="android:editTextBackground">@color/greyscale2</item>
+        <item name="android:textColor">@color/greyscale16</item>
+        <item name="android:button">@style/LightButton</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="LightDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:background">@color/greyscale2</item>
+        <item name="android:textColor">@color/greyscale16</item>
+        <item name="android:textViewStyle">@style/LightTextView</item>
+        <item name="android:buttonStyle">@style/LightButton</item>
+        <item name="android:divider">@color/greyscale14</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:editTextPreferenceStyle">@style/LightDialog</item>
+    </style>
+    <style name="AppTheme.SettingsTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="titleTextStyle">@color/colorTitleText</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">#ffffffff</item>
+    </style>
+
+    <style name="AppTheme.SettingsTheme.Toolbar" parent="AppTheme.SettingsTheme">
+        <item name="android:textColorPrimary">#ffffffff</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTitleText</item>
+        <!--<item name="android:textColor">@color/colorTitleText</item>-->
+    </style>
+    <style name="Toolbar.Text" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorTitleText</item>
+    </style>
+    <!--<style name="AlertDialogCustom" parent="@android:style/Theme.Dialog">
+        <item name="android:titleTextAppearance">@style/AlertDialogCustom.Title</item>
+        <item name="android:padding">30sp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="AlertDialogCustom.Title" parent="@android:style/Theme.Dialog">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:bottomBright">@color/white</item>
+        <item name="android:bottomDark">@color/white</item>
+        <item name="android:bottomMedium">@color/white</item>
+        <item name="android:centerBright">@color/white</item>
+        <item name="android:centerDark">@color/white</item>
+        <item name="android:centerMedium">@color/white</item>
+        <item name="android:fullBright">@color/orange</item>
+        <item name="android:fullDark">@color/orange</item>
+        <item name="android:topBright">@color/blue</item>
+        <item name="android:topDark">@color/blue</item>
+    </style>-->
+    <style name="ChatAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+            <item name="colorControlActivated">#ddd</item>
+            <item name="colorControlHighlight">@color/my_spinner_text_color</item>
+
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="colorControlNormal">#ffffffff</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogCustom</item>
+
+        <item name="actionBarStyle">@style/ChatActionBar</item>
+    </style>
+    <style name="POSTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="colorControlNormal">#fff</item>
+
+        <item name="actionBarStyle">@style/ChatActionBar</item>
+    </style>
+
+    <style name="PopupMenu" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:popupBackground">@color/colorPrimary</item>
+    </style>
+    <style name="ChatActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@color/colorTitleText</item>
+
+    </style>
+    <!--<item name="titleTextStyle">@style/ChatTitleTextStyle</item>-->
+    <style name="ChatTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorTitleText</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">#FFF</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">#811</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/my_spinner_text_color</item>
+    </style>
+    <style name="Spinner">
+        <!-- Used for the bottom line when not selected / focused -->
+        <item name="colorControlNormal">@color/my_spinner_text_color</item>
+        <item name="colorControlActivated">@color/my_spinner_text_color</item>
+        <!-- colorControlActivated & colorControlHighlight use the colorAccent          color by default -->
+    </style>
+    <style name="AlertDialogCustom" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="android:colorPrimary">@color/my_spinner_text_color</item>
+        <item name="android:colorAccent">@color/my_spinner_text_color</item>
+        <item name="colorControlNormal">@color/my_spinner_text_color</item>
+        <item name="colorControlActivated">@color/my_spinner_text_color</item>
+        <item name="colorControlHighlight">@color/my_spinner_text_color</item>
+    </style>
+</resources>

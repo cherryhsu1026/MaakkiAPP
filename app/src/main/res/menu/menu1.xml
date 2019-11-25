@@ -1,0 +1,56 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_more_vert_white_24dp"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <!--<item android:id="@+id/uploadFile" app:showAsAction="always" android:title="上傳" />-->
+            <item
+                android:id="@+id/maakki_web"
+                android:icon="@drawable/ic_home_white_24dp"
+                android:title="首頁"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/qr_Activity"
+                android:title="掃描"
+                android:icon="@drawable/ic_fullscreen_white_24dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/action_share"
+                android:title="分享"
+                android:icon="@drawable/ic_share_white_24dp"
+                app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+                app:showAsAction="always" />
+
+            <item
+                android:id="@+id/chat_Activity"
+                android:title="聊天"
+                android:icon="@drawable/ic_supervisor_account_white_24dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/notice_Activity"
+                android:title="通知"
+                android:icon="@drawable/ic_notifications_white_18dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/Map_Activity"
+                android:title="商店"
+                android:icon="@drawable/ic_store_white_24dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/pos"
+                android:title="結帳"
+                android:icon="@drawable/ic_monetization_on_white_18dp"
+                app:showAsAction="always" />
+            <item
+            android:id="@+id/settings"
+            android:title="设定"
+            android:icon="@drawable/ic_settings_white_24dp"
+            app:showAsAction="always" />
+        </menu>
+    </item>
+</menu>
+

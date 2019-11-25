@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/LL_addSponsor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tips_circle_accent"
+                android:gravity="center"
+                android:padding="12dp"
+                android:src="@drawable/baseline_reply_white_18dp"
+                />
+            <TextView
+                android:id="@+id/tv_allyname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_back"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="建立梦想联盟"
+                android:textColor="#333"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_allyname"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/tv_allyname"
+                android:src="@drawable/baseline_list_black_18dp"
+                />
+
+            <ImageView
+                android:id="@+id/ivTarget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_icon"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/iv_edit"
+                android:src="@drawable/baseline_face_black_18dp"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/ivAlly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_icon"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/ivTarget"
+                android:src="@drawable/baseline_supervisor_account_black_18dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/tv_allyname"
+                android:layout_marginLeft="-1dp"
+                android:layout_marginTop="28dp"
+                android:layout_toRightOf="@+id/tv_icon"
+                android:background="@drawable/background_corner"
+                android:src="@drawable/no_picture" />
+
+            <EditText
+                android:id="@+id/et_greeting"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_allyname"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="28dp"
+                android:layout_toRightOf="@+id/iv_icon"
+                android:background="@drawable/edittext_style"
+                android:hint="为你的联盟取一个名字"
+                android:inputType="text"
+                android:textColor="#666"
+                android:textSize="17dp" />
+
+            //input password
+
+            <TextView
+                android:id="@+id/tv_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_clear"
+                android:layout_marginTop="15dp"
+                android:text="联盟图志："
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+
+
+            <TextView
+                android:id="@+id/tv_iCredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_icon"
+                android:layout_marginTop="10dp"
+                android:text="赞助点数："
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/et_iCredits"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_greeting"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@+id/iv_icon"
+                android:background="@drawable/edittext_style"
+                android:hint="赞助的 i点数"
+                android:inputType="number"
+                android:textColor="#666"
+                android:textSize="17dp" />
+
+
+            <TextView
+                android:id="@+id/tv_currency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_greeting"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@+id/et_iCredits"
+                android:gravity="end"
+                android:text="USD(i)"
+                android:textColor="@color/title_gray"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tv_KickStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_iCredits"
+                android:layout_marginTop="10dp"
+                android:text="众筹时间："
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/tv_donatetimedialog"
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_iCredits"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@+id/iv_icon"
+                android:text="设定每日众筹时间"
+                android:textColor="#aaa"
+                android:textSize="17dp" />
+            //input password
+
+
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_donatetimedialog"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@+id/iv_icon"
+                android:background="@drawable/edittext_style"
+                android:hint="请输入转点密码"
+                android:inputType="textPassword"
+                android:textColor="#666"
+                android:textSize="17dp" />
+
+            <RelativeLayout
+                android:id="@+id/RL_CB"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_password"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/back_lightgrey_corner"
+                android:gravity="center"
+                android:padding="15dp">
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:buttonTint="@color/checkbox_filter_tint_accent"
+                    android:text="@null" />
+
+                <TextView
+                    android:id="@+id/tv_checkrules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/checkbox"
+                    android:paddingTop="2dp"
+                    android:text="@string/Statement_addSponsor_abv"
+                    android:textColor="@color/lightdark"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RL_CB_anonymous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/RL_CB"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:padding="5dp">
+
+                <CheckBox
+                    android:id="@+id/checkbox_anonymous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="@color/checkbox_filter_tint_accent"
+                    android:text="@null" />
+
+                <TextView
+                    android:id="@+id/tv_checkrules_anonymous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="34dp"
+                    android:layout_toRightOf="@+id/checkbox_anonymous"
+                    android:text="本联盟不接受申请加入"
+                    android:textColor="#666"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RL_CB_buildupbyic"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/RL_CB_anonymous"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:padding="5dp">
+
+                <CheckBox
+                    android:id="@+id/checkbox_buildupbyic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:buttonTint="@color/checkbox_filter_tint_accent"
+                    android:text="@null" />
+
+                <TextView
+                    android:id="@+id/tv_checkrules_buildupbyic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_toRightOf="@+id/checkbox_buildupbyic"
+                    android:text="盟主支付点数建立联盟"
+                    android:textColor="#666"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+            //set submit icon
+            <RelativeLayout
+                android:id="@+id/rl_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <ImageView
+                    android:id="@+id/iv_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/tips_circle_grey"
+                    android:padding="15dp"
+                    android:src="@drawable/baseline_group_white_18dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/RL_done"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/iv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/addsponsor" />
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/title_gray"
+            android:textSize="14dp"
+            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/tv_targetStr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/title_gray"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+        //继续发红包
+        <ImageView
+            android:id="@+id/iv_nextRE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="460dp"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/tips_circle_orange"
+            android:padding="15dp"
+            android:src="@drawable/baseline_mail_white_18dp"
+            />
+        //i点中心
+        <ImageView
+            android:id="@+id/iv_Prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="460dp"
+            android:layout_marginRight="70dp"
+            android:background="@drawable/tips_circle_orange"
+            android:padding="15dp"
+            android:src="@drawable/baseline_list_white_18dp"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

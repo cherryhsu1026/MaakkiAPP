@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/tips_circle"
+        android:gravity="center"
+        android:padding="7dp"
+        android:src="@drawable/ic_attach_money_white_18dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/iv"
+        android:text="进行结账"
+        android:textColor="#333"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:text="金额："
+        android:textColor="#666"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/iv"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/tv1"
+        android:textColor="#333"
+        android:textSize="16dp"
+        android:textStyle="bold|italic" />
+
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="13dp"
+        android:text="付款："
+        android:textColor="#666"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/tv6">
+
+        <RadioGroup
+            android:id="@+id/rgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#666"
+                android:textColor="#666"
+                android:text="现金" />
+
+            <RadioButton
+                android:id="@+id/icredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#666"
+                android:buttonTint="#666"
+                android:checked="true"
+                android:text="i点" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_rg"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="11dp"
+        android:text="卡号："
+        android:textColor="#666"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/maakki_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_rg"
+        android:layout_marginRight="60dp"
+        android:layout_toRightOf="@+id/tv5"
+        android:hint="输入玛吉卡号"
+        android:inputType="number"
+        android:textColor="#666"
+        android:textSize="16dp" />
+    <TextView
+        android:id="@+id/text_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maakki_id"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@+id/tv5"
+        android:textColor="#666"
+        android:textSize="16dp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/text_nickname"
+        android:layout_toRightOf="@+id/tv5"
+        android:visibility="gone"
+        android:textColor="#333"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tv_maakki_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_rg"
+        android:layout_marginRight="50dp"
+        android:layout_toRightOf="@+id/tv5"
+        android:textColor="#666"
+        android:textSize="16dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/iv_scan"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ll_rg"
+        android:src="@drawable/ic_fullscreen_black_18dp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_msg"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="8dp"
+        android:text="发票："
+        android:textColor="#666"
+        android:textSize="16dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_msg"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/tv2"
+        android:textSize="16dp"
+        android:theme="@style/Spinner" />
+
+    <RelativeLayout
+        android:id="@+id/rl_invoicedata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv2"
+
+        android:layout_marginLeft="18dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="抬头："
+            android:textColor="#666"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/customer_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@+id/tv3"
+            android:hint="输入发票抬头"
+            android:inputType="text"
+            android:textColor="#666"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv3"
+            android:layout_marginTop="12dp"
+            android:text="编号："
+            android:textColor="#666"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/customer_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv3"
+            android:layout_marginRight="16dp"
+
+            android:layout_toRightOf="@+id/tv4"
+            android:hint="输入客户公司编号"
+            android:inputType="number"
+            android:textColor="#666"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

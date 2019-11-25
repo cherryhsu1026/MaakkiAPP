@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="438dp"
+    android:background="#e5000e">
+    <ImageView
+        android:id="@+id/iv_envelope"
+        android:layout_width="300dp"
+        android:layout_height="438dp"
+        android:layout_centerHorizontal="true"
+
+        android:src="@drawable/redenvelope"/>
+    <TextView
+        android:id="@+id/tv_sponsorAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_centerHorizontal="true"
+        android:text="12345789"
+        android:textColor="@color/maakki_red"
+        android:typeface="monospace"
+        android:textStyle="bold"
+        android:textSize="24dp" />
+    <TextView
+        android:id="@+id/tv_greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="34dp"
+        android:layout_centerHorizontal="true"
+        android:text="1234567890"
+        android:textColor="@color/maakki_red"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tv_sendernickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="365dp"
+        android:layout_marginRight="25dp"
+        android:layout_alignParentRight="true"
+        android:text="1234567890"
+        android:textColor="@color/golden"
+        android:textSize="12dp"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/tv_senderdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="385dp"
+        android:layout_marginRight="25dp"
+        android:layout_alignParentRight="true"
+        android:text="1234567890"
+        android:textColor="@color/golden"
+        android:textSize="9dp"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/tv_senderlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="25dp"
+        android:layout_alignParentRight="true"
+        android:text="1234567890"
+        android:textColor="@color/golden"
+        android:textStyle="italic"
+        android:textSize="9dp"
+        />
+</RelativeLayout>

@@ -1,0 +1,49 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_dehaze_white_18dp"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <!--<item android:id="@+id/uploadFile" app:showAsAction="always" android:title="上傳" />-->
+
+            <item
+                android:id="@+id/qr_Activity"
+                android:title="扫描"
+                android:visible="false"
+                android:icon="@drawable/ic_fullscreen_white_24dp"
+                app:showAsAction="always" />
+
+            <item
+                android:id="@+id/item"
+                android:title="商品"
+                android:icon="@drawable/ic_local_cafe_white_18dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/record"
+                android:title="记录"
+                android:icon="@drawable/ic_more_white_18dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/member"
+                android:title="客户"
+                android:visible="false"
+                android:icon="@drawable/ic_supervisor_account_white_24dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/report"
+                android:visible="false"
+                android:title="报表"
+                android:icon="@drawable/ic_assessment_white_18dp"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/settings"
+                android:title="设定"
+                android:icon="@drawable/ic_settings_white_24dp"
+                app:showAsAction="always" />
+        </menu>
+    </item>
+</menu>
+

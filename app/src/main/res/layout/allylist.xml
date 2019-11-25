@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+
+        app:navigationContentDescription="@string/abc_action_bar_up_description"
+        app:navigationIcon="?homeAsUpIndicator"
+        app:title="通知记录"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+    <!--android:elevation="4dp"-->
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/my_toolbar"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="13dp"
+            android:textColor="#000"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/fire"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/back_red"
+            android:text="Clear"
+            android:textColor="#eee"
+            android:textSize="12dp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/isOnline"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_toLeftOf="@id/fire"
+            android:background="@drawable/back_red"
+            android:text="ON"
+            android:textColor="#eee"
+            android:textSize="12dp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/my_toolbar"
+        android:gravity="center"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:stretchMode="columnWidth" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_top">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/setting_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/RL_nothing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_toolbar"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/no_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/no_notification"
+            android:visibility="invisible" />
+    </RelativeLayout>
+</RelativeLayout>

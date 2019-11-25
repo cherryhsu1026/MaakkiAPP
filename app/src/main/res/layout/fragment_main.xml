@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/fragment_main_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--    <ProgressBar android:id="@+id/pB1"
+            style="?android:attr/progressBarStyleHorizontal" android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_centerVertical="true"
+            android:padding="2dip">
+        </ProgressBar>-->
+    <com.ant.liao.GifView
+        android:id="@+id/gifView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+    <ImageView
+        android:id="@+id/addSponsor"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="74dp"
+        android:src="@drawable/ic_playlist_add_white_18dp"
+        android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/openIA"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="74dp"
+        android:src="@drawable/baseline_person_add_white_18dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/systemadmin"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="74dp"
+        android:src="@drawable/baseline_face_white_18dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/GocImage"
+        android:layout_width="24dp"
+        android:layout_height="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="70dp"
+        android:src="@drawable/baseline_assessment_white_18dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/CustomerIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/tips_circle_accent"
+        android:padding="15dp"
+        android:src="@drawable/baseline_chat_bubble_outline_white_18dp"
+        android:visibility="invisible" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ErrpageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:onClick="goMainActivity"
+        android:visibility="invisible">
+        <ImageView
+            android:id="@+id/Errpage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:src="@drawable/no_service" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/RL_suppliericon"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/SupplierIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/tips_circle_maakki_red"
+            android:padding="15dp"
+            android:src="@drawable/baseline_chat_bubble_outline_white_18dp"
+            android:visibility="visible"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">Maakki.10</string>
+    <string name="app_ver">"Maakki_1908015_1"</string>
+    <string name="action_settings">设定</string>
+    <string-array name="CustomerServiceContactId">
+        <item>90</item>
+        <item>53</item>
+    </string-array>
+    <string-array name="Project_involved_Makki_id">
+        <item>1</item>
+        <item>17141</item>
+        <item>22545</item>
+    </string-array>
+
+    <string-array name="checkorder_option_array">
+        <item>二联式</item>
+        <item>三联式</item>
+    </string-array>
+    <string-array name="area_option_array">
+        <item>大陆</item>
+        <item>台湾</item>
+        <item>香港</item>
+        <item>澳门</item>
+        <item>美国</item>
+        <item>日本</item>
+        <item>印度</item>
+        <item>韩国</item>
+        <item>马来西亚</item>
+        <item>新加坡</item>
+        <item>柬埔寨</item>
+    </string-array>
+    <string-array name="editcategory_status_array">
+        <item>启用</item>
+        <item>停用</item>
+        <item>删除</item>
+    </string-array>
+    <string-array name="edittable_option_array">
+        <item>内用</item>
+        <item>外带</item>
+    </string-array>
+    <string-array name="editcategory_status_newadd_array">
+        <item>启用</item>
+        <item>停用</item>
+    </string-array>
+    <string-array name="credit_options">
+        <item>USD</item>
+        <item>RMB</item>
+        <item>JPY</item>
+        <item>NTD</item>
+        <item>MYR</item>
+        <item>HKD</item>
+    </string-array>
+    <string-array name="rebate_options">
+        <item>依照交易金额的百分比</item>
+        <item>固定每笔交易返利</item>
+    </string-array>
+    <string-array name="isPercent">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+    <!--<string name="app_name">MaterialSettings</string>-->
+    <!--<string name="action_settings">Settings</string>-->
+
+    <string name="pref_title_ringtone">通知铃声選項</string>
+    <string name="pref_ringtone_silent">静音</string>
+
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+
+    <!-- Example settings for Data & Sync -->
+
+    <string name="imaimai_title">Love creates everything</string>
+    <string name="author_url">www.maakki.cc</string>
+    <string name="GOC_content1">
+    期末点数 = 期初点数 + 期中增加点数 - 期中减少点数\n\n
+    期中增加点数 = 期中转进点数(其他会员转点进来的点数) + 商店销售所收的点数\n\n
+    期中减少点数 = 期中转出点数(其他会员转点出去的点数) + 消费购物所花的点数 + 回收的点数\n\n
+    收益 = (期末点数 * 期末回收率 + 期中减少点数 * 减少当日回收率) - (期初点数 * 期初回收率 + 期中买进点数 * 买进当日回收率) + (系统给予的奖励点数 * 获得当日的回收率)\n\n
+    成本 = (期初点数 * 期初回收率 + 期中增加点数 * 增加当日回收率)\n\n
+    成本收益率 GOC = (收益 / 成本) * 100 %\n\n
+    所有数字系基于市场乐观发展所作的估算，不代表您实际拥有。更多说明请参考服务条款。
+    </string>>
+    <string name="statement_ver_date">20190308</string>
+    <string name="statement_topic">玛吉点数「i点」买卖暨920专案同意书</string>
+    <string name="statement_content1">\t\t本人同意购买「i点」，是在完全阅读玛吉国际网(以下简称Maakki.cc)的线上服务条款并完全同意其所有的规则后，所做出的自主行为，完全明白包括但不限於以下几点：\n\n
+        1.法律声明\n\n
+        》请特别注意，所有的说明系基于市场乐观发展所做的估计描述，不代表Maakki.cc保证满足参与者的包括但不限于金钱获得的任何期待。\n\n
+        》请尊重您所在地区相关法律包括但不限于银行法、证券交易法与金融交易秩序主管机关订定的法规，更多的规定请参考并遵守Maakki.cc的服务条款。\n\n
+        》Maakki.cc中的MDF集中式众筹及MGS线上交易服务，由于基础市场的波动性，可能不适合所有人参与。
+    </string>
+    <string name="statement_content2">
+        》MDF及MGS可能存在损失全部「i点」的风险。\n\n
+        》「i点」为本服务平台流通使用之回馈积分，主要供您利用于兑换本服务平台开发的各种在线应用服务，或是向玛吉商店兑换等值商品或折抵消费，在任何状况下均不得据以主张对 Maakki.cc 要求兑回现金。\n\n
+        2.卖家免责\n\n
+        》同意排除先前所有可能的口头约定，点数的买卖在交易的当下已经银货两讫，卖家不保证获利，不保证点数能够兑现，不保证点数可以在玛吉商店兑换商品或是折抵消费金额，不保证MDF赞助后会得到任何形式的回报，对于所售出的点数也没有回收或是买回的义务。\n\n
+        </string>
+    <string name="statement_content3">
+        3. 920专案\n\n
+        》本专案系由爱买卖集团（玛吉卡号：17142）运作与推动，与Maakki.cc官方并无关联。\n\n
+        》申请参与本专案，爱买卖集团会依据当日Maakki.cc官方公告的回收率（以下简称回收率）的1.1倍计算，将所对应申购价金的点数额，转入参与者的玛吉卡号，参与者应自行检视所转入的点数额是否正确，并确认是否有效参与本专案。\n\n
+        》在申购当下提示的退货期限内，可以申请退货，退货的点数额为所申购的点数额，逾期将不受理。
+    </string>
+    <string name="statement_content4">
+        》退货金额的计算，以  (1)申购价金的九成。抑或(2)退货点数额乘以退货当日回收率九成。(1)(2)两者择优办理。\n\n
+        》退货金额将于退货的第七天，转进参与者与爱买卖集团事先合意约定的银行帐户。\n\n
+        》爱买卖集团保留本专案实施细则(详见920专案交易规则)，以及包括但不限于市场推广业务佣金的提拨比例变更的权力，当新规则实施时，以新规则为准。\n\n
+        4.溯及既往\n\n
+        》本同意书可追溯适用于本人在玛吉网上的所有点数购买行为。
+    </string>
+    <string name="statement_checkbox">
+        我确定完全明白并且同意以上所有说明
+    </string>
+    <string name="reserved_imaimai">2019© imaimai.am All Rights Reserved</string>
+    <string name="imaimai_order_content4">本次交易的退货期限为：</string>
+    <string name="Rules_topic">
+        920专案交易规则
+    </string>
+    <string name="Rule_imaimai1">
+        申购时间为北京时间每天09:00~24:00，额度用完，提早结束。
+    </string>
+    <string name="Rule_imaimai2">
+        送出订单60分钟内，可取消订单。不影响之后申购。
+    </string>
+    <string name="Rule_imaimai3">
+        送出订单60分钟后取消订单，七日内不得再申购。
+    </string>
+    <string name="Rule_imaimai4">
+        送出订单60分钟后，若无回报对应的汇款信息，金流中心可迳行取消该笔订单，并停止该会员三十日内再申购本专案的权利。
+    </string>
+    <string name="Rule_imaimai5">
+        请注意每笔订单的退货期限，申请退货将暂停之后30天申购的权利。
+    </string>
+    <string name="Rule_OpenIA">
+        我确定已经让申请者详读并完整明白且同意玛吉网服务条款的所有规则。
+    </string>
+    <string name="Statement_addSponsor">
+        我已经阅读并同意服务条款中的说明与规则，完全明白作为赞助者，因为赞助他人或是系统膨胀而获得的FG(Funding Goal),存活的时间为十四天，也就是这个FG可以接受他人赞助的有效期限为十四天，第十五天凌晨00：00（北京时间）无论余额为多少，都会自动归为零。作为众筹者接受到赞助者馈赠的i点，以及在众筹活动中获得的FG，均不可视其为现金或是约当现金，也不得据以主张对玛吉网要求兑回现金。
+    </string>
+    <string name="Statement_addSponsor_abv">
+        我已经阅读并同意服务条款中的说明与规则，保证遵守所有规定运作本联盟。
+    </string>
+    <string name="remove_bubble_description">Remove Floating Bubble</string>
+    <string name="floating_bubble_description">Floating Bubble</string>
+</resources>

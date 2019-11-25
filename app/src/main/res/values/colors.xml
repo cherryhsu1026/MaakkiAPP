@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#009999</color>
+    <color name="colorBlue">#0072AA</color>color>
+    <color name="colorTitleText">#ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="lavender">#E6E6FA</color>
+    <color name="purple">#851ABA</color>
+    <color name="greyscale2">#ddd</color>
+    <color name="greyscale3">#ccc</color>
+    <color name="greyscale16">#ff8000</color>
+    <color name="greyscale1">#eee</color>
+    <color name="greyscale14">#ff8000</color>
+    <color name="orange">#ff8000</color>
+    <color name="golden">#FFD700</color>
+    <color name="freshgreen">#8cea00</color>
+    <color name="freshblue">#00caca</color>
+    <color name="brightblue">#7ecef4</color>
+    <color name="actionbar">#3cb879</color>
+    <color name="title_gray">#434343</color>
+    <color name="warm_gray">#999</color>
+    <color name="bg_msg_you">#5eb964</color>
+    <color name="bg_msg_from">#e5e7eb</color>
+    <color name="bg_msg_input">#e8e8e8</color>
+    <color name="text_msg_input">#626262</color>
+    <color name="lblFromName">#777777</color>
+    <color name="my_spinner_text_color">#666</color>
+    <color name="maakki_red">#881212</color>
+    <color name="red">#ff1212</color>
+    <color name="lightdark">#333</color>
+</resources>

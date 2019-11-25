@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/LL_addSponsor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tips_circle"
+                android:gravity="center"
+                android:padding="12dp"
+                android:src="@drawable/baseline_reply_white_18dp" />
+
+            <TextView
+                android:id="@+id/tv_MDF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/iv_back"
+                android:text="赞助梦想众筹"
+                android:textColor="#333"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/tv_MDF"
+                android:src="@drawable/baseline_search_black_18dp"
+                android:visibility="gone" />
+
+
+
+            <ImageView
+                android:id="@+id/ivTarget"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/ivList"
+                android:src="@drawable/baseline_face_black_18dp" />
+
+            <ImageView
+                android:id="@+id/ivAlly"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/ivTarget"
+                android:src="@drawable/baseline_donut_small_black_18dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_iCredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivTarget"
+                android:layout_marginTop="28dp"
+                android:text="赞助点数："
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_iCredits"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivTarget"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="28dp"
+                android:layout_toRightOf="@+id/tv_iCredits"
+                android:background="@drawable/edittext_style"
+                android:hint="要赞助的i点"
+                android:inputType="number"
+                android:textColor="#666"
+                android:textSize="16dp" />
+
+
+            <TextView
+                android:id="@+id/tv_currency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivTarget"
+                android:layout_marginTop="28dp"
+                android:layout_toRightOf="@+id/et_iCredits"
+                android:gravity="end"
+                android:textColor="@color/title_gray"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tv_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_iCredits"
+                android:layout_marginTop="10dp"
+                android:text="指定对象："
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_target"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_iCredits"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_target"
+                android:background="@drawable/edittext_style"
+                android:hint="赞助对象卡号"
+                android:inputType="number"
+                android:textColor="#666"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_iCredits"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/et_target"
+                android:gravity="end"
+                android:textColor="@color/maakki_red"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_envelope_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_target"
+                android:layout_marginTop="10dp"
+                android:text="红包数目："
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/et_envelope_no"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_target"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_envelope_no"
+                android:background="@drawable/edittext_style"
+                android:hint="请输入红包数目"
+                android:inputType="number"
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_envelope_piece"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_target"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_envelope_no"
+                android:background="@drawable/edittext_style"
+                android:text="1"
+                android:textColor="@color/title_gray"
+                android:textSize="16dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_piece"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_target"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_envelope_piece"
+                android:gravity="end"
+                android:textColor="@color/title_gray"
+                android:text="个"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_greeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_envelope_no"
+                android:layout_marginTop="10dp"
+                android:text="祝福贺词："
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/et_greeting"
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_envelope_no"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_greeting"
+                android:background="@drawable/edittext_style"
+                android:hint="恭喜发财，平安喜乐！"
+                android:inputType="text"
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:visibility="gone"/>
+            <ImageView
+                android:id="@+id/iv_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="7dp"
+                android:layout_below="@+id/tv_envelope_no"
+                android:layout_toRightOf="@+id/et_greeting"
+                android:src="@drawable/baseline_highlight_off_black_18dp"
+                android:visibility="gone"/>
+            //input password
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_greeting"
+                android:layout_marginTop="10dp"
+                android:text="转点密码："
+                android:textColor="#666"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_greeting"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tv_password"
+                android:background="@drawable/edittext_style"
+                android:hint="请输入转点密码"
+                android:inputType="textPassword"
+                android:textColor="#666"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                android:id="@+id/RL_CB"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_password"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/back_lightgrey_corner"
+                android:gravity="center"
+                android:padding="15dp">
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:buttonTint="@color/checkbox_filter_tint"
+                    android:text="@null" />
+
+                <TextView
+                    android:id="@+id/tv_checkrules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/checkbox"
+                    android:text="@string/Statement_addSponsor"
+                    android:textColor="@color/lightdark"
+                    android:paddingTop="2dp"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/RL_CB"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/RL_CB_anonymous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <CheckBox
+                        android:id="@+id/checkbox_anonymous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="3dp"
+                        android:buttonTint="@color/checkbox_filter_tint"
+                        android:text="@null" />
+
+                    <TextView
+                        android:id="@+id/tv_checkrules_anonymous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/checkbox_anonymous"
+                        android:text="匿名"
+                        android:textColor="#666"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/RL_CB_friendlimited"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    >
+                    <CheckBox
+                        android:id="@+id/checkbox_friendlimited"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="3dp"
+                        android:buttonTint="@color/checkbox_filter_tint"
+                        android:text="@null" />
+                    <TextView
+                        android:id="@+id/tv_checkrules_friendlimited"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/checkbox_friendlimited"
+                        android:text="好友"
+                        android:textColor="#666"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/RL_CB_silent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    >
+                    <CheckBox
+                        android:id="@+id/checkbox_silent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="3dp"
+                        android:buttonTint="@color/checkbox_filter_tint"
+                        android:text="@null" />
+                    <TextView
+                        android:id="@+id/tv_checkrules_silent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/checkbox_silent"
+                        android:text="静默"
+                        android:textColor="#666"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            //set submit icon
+            <RelativeLayout
+                android:id="@+id/rl_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <ImageView
+                    android:id="@+id/iv_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/tips_circle_grey"
+                    android:padding="15dp"
+                    android:src="@drawable/baseline_face_white_18dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/RL_done"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/iv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/addsponsor" />
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/title_gray"
+            android:textSize="14dp"
+            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/tv_targetStr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/title_gray"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+        //继续发红包
+        <ImageView
+            android:id="@+id/iv_nextRE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="460dp"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/tips_circle_orange"
+            android:padding="15dp"
+            android:src="@drawable/baseline_mail_white_18dp"
+            />
+        //i点中心
+        <ImageView
+            android:id="@+id/iv_Prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="460dp"
+            android:layout_marginRight="70dp"
+            android:background="@drawable/tips_circle_orange"
+            android:padding="15dp"
+            android:src="@drawable/baseline_list_white_18dp"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

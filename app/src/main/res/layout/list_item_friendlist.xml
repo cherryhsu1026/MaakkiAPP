@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:paddingEnd="8dp"
+    android:paddingBottom="8dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:scaleType="centerCrop"></ImageView>
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/tips_circle"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
+        android:layout_toRightOf="@id/icon"
+        android:maxEms="60"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:textColor="#333"
+        android:textSize="16dp"></TextView>
+
+    <RelativeLayout
+        android:id="@+id/rl_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/iv_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="0dp"
+            android:src="@drawable/baseline_notifications_active_999_14dp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_notify"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="0dp"
+            android:gravity="right"
+            android:paddingLeft="8dp"
+            android:paddingTop="2dp"
+            android:text="12345"
+            android:textColor="#999"
+            android:textSize="13dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_click"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_invite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/tips_circle_freshblue"
+            android:padding="7dp"
+            android:src="@drawable/baseline_person_add_white_18dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/iv_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/tips_circle_grey"
+                android:padding="7dp"
+                android:src="@drawable/baseline_close_white_18dp"
+                android:visibility="gone" />
+            <ImageView
+                android:id="@+id/iv_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/iv_no"
+                android:background="@drawable/tips_circle_maakki_red"
+                android:padding="7dp"
+                android:src="@drawable/baseline_done_white_18dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/textview_solid_freshblue"
+            android:paddingLeft="12dp"
+            android:paddingTop="9dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="9dp"
+            android:text="邀请中"
+            android:textColor="#fff"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginRight="80dp"
+        android:layout_toRightOf="@id/icon"
+        android:maxLines="2"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:textColor="#999"
+        android:textSize="14dp" />
+</RelativeLayout>

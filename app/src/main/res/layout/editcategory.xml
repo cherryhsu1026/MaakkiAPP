@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyscale1">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:popupTheme="@style/PopupMenu"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:navigationContentDescription="@string/abc_action_bar_up_description"
+        app:navigationIcon="?homeAsUpIndicator"
+        app:title="分类"/>
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/my_toolbar"
+        android:id="@+id/rl_top"
+        >
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:columnWidth="100dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_cashier"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar"        >
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/cashier_button"
+            android:visibility="visible"
+            android:layout_margin="16dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_attach_money_white_18dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

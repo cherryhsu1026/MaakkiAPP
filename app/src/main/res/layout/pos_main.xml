@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:navigationContentDescription="@string/abc_action_bar_up_description"
+        app:navigationIcon="?homeAsUpIndicator"
+        app:popupTheme="@style/PopupMenu"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:title="POS 1.0"
+         />
+    <!--android:elevation="4dp"-->
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/maakki_red"
+            app:tabIndicatorColor="#fff"
+            android:visibility="invisible"
+            app:tabMode="scrollable" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tabs"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/imv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cashier"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar"
+        android:gravity="bottom"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/tv_sum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginRight="107dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="6dp"
+            android:paddingTop="12dp"
+            android:textColor="#999"
+            android:textSize="18dp"
+            android:textStyle="bold|italic"
+            android:visibility="invisible"/>
+
+
+        <Button
+            android:id="@+id/check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/back_grey"
+            android:text="CHECK"
+            android:textColor="#fff"
+            android:textSize="12dp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_add"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar"
+        android:gravity="center_horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="50dp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="myPrefScreen">
+    <PreferenceCategory android:title="绑定银行账户信息">
+        <EditTextPreference
+            android:dialogMessage="请确认您所填入的资料正确无误"
+            android:dialogTitle="请填入银行名称"
+            android:key="bank_name"
+            android:summary="請填入您要绑定的银行名称"
+            android:theme="@style/AppTheme.SettingsTheme"
+            android:title="请填入银行名称">
+        </EditTextPreference>
+        <EditTextPreference
+            android:dialogMessage="请确认您所填入的资料正确无误"
+            android:dialogTitle="请填入银行分行名称"
+            android:key="branch_name"
+            android:summary="請填入您要绑定的银行分行名称"
+            android:theme="@style/AppTheme.SettingsTheme"
+            android:title="请填入银行分行名称">
+        </EditTextPreference>
+        <EditTextPreference
+            android:dialogMessage="请确认您所填入的资料正确无误"
+            android:dialogTitle="请填入银行账号"
+            android:key="account_no"
+            android:summary="請填入您要绑定的银行账号"
+            android:theme="@style/AppTheme.SettingsTheme"
+            android:title="请填入银行账号">
+        </EditTextPreference>
+        <EditTextPreference
+            android:dialogMessage="请确认您所填入的资料正确无误"
+            android:dialogTitle="请填入银行账户名称"
+            android:key="account_name"
+            android:summary="請填入您要绑定的银行账户名称"
+            android:theme="@style/AppTheme.SettingsTheme"
+            android:title="请填入银行账户名称">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="来源信息"
+        android:key="introducer_info">
+        <Preference
+            android:title="介绍人卡号"
+            android:key="introducer_id">
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>
+

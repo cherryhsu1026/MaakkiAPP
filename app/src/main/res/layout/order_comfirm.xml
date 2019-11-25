@@ -1,0 +1,258 @@
+<!--<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">-->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000"
+        app:navigationContentDescription="@string/abc_action_bar_up_description"
+        app:navigationIcon="?homeAsUpIndicator"
+        app:popupTheme="@style/PopupMenu"
+        app:title="点餐确认"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/back_grey"
+        android:padding="13dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/text_orderno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="13dp"
+            android:textColor="#333"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="13dp"
+            android:gravity="center"
+            android:padding="4dp"
+            android:src="@drawable/ic_create_black_18dp"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="13dp"
+            android:layout_toLeftOf="@id/iv_edit"
+            android:gravity="center"
+            android:padding="4dp"
+            android:src="@drawable/ic_keyboard_arrow_right_black_18dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="13dp"
+            android:layout_toLeftOf="@id/iv_right"
+            android:gravity="center"
+            android:padding="4dp"
+            android:src="@drawable/ic_keyboard_arrow_left_black_18dp"
+            android:visibility="invisible" />
+        <ImageView
+            android:id="@+id/getall"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="13dp"
+            android:layout_toLeftOf="@id/iv_left"
+            android:gravity="center"
+            android:padding="4dp"
+            android:src="@drawable/ic_list_black_18dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/text_ordertime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_orderno"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:textColor="#666"
+            android:textSize="12dp" />
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_ordertime"
+            android:layout_marginBottom="50dp">
+
+            <TextView
+                android:id="@+id/text_ordercontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="13dp"
+                android:textColor="#333"
+                android:textSize="14dp" />
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/iv_seat"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/tips_circle"
+            android:gravity="center"
+            android:padding="6dp"
+            android:src="@drawable/ic_event_seat_white_18dp"
+            />
+        <TextView
+            android:id="@+id/text_tableid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginRight="4dp"
+            android:textColor="#333"
+            android:textSize="16dp"
+            android:layout_toRightOf="@+id/iv_seat"
+            android:src="@drawable/ic_event_seat_white_18dp"
+            android:visibility="visible"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:id="@+id/rl_countamount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="13dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/text_tableid"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="9dp"
+                android:textColor="#333"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="6dp"
+                android:paddingLeft="6dp"
+                android:background="@drawable/textview_border"/>
+
+            <TextView
+                android:id="@+id/orderitemcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:textColor="#333"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_sum"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/tips_circle"
+                android:padding="6dp"
+                android:src="@drawable/ic_attach_money_white_18dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_ordersum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:textColor="#333"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/text_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#333"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout><!---->
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/lv_om"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar"
+        android:gravity="center"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:stretchMode="columnWidth"
+        android:visibility="invisible" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar">
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/imv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/my_toolbar"
+        android:visibility="invisible" />
+</RelativeLayout>
+
+    <!----><!--    </RelativeLayout>
+    -->
+
+
+
+    <!--</LinearLayout>-->

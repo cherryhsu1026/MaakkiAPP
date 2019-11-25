@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="myPreferenceScreen">
+    <PreferenceCategory android:title="手机系统设置">
+        <Preference
+            android:key="setting"
+            android:summary="请打开定位与摄影机功能权限，并解除电池使用限制"
+            android:title="功能权限设置"></Preference>
+        <Preference
+            android:key="notify_setting"
+            android:summary="设置手机对Maakki.10的通知权限"
+            android:title="手机通知设置"></Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="哪些信息需要通知">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="enable_notification"
+            android:summary="新活动信息：社群、消费"
+            android:title="社群活动" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="chat_private"
+            android:summary="好友发来的私聊信息"
+            android:title="私聊信息" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="chat_stranger"
+            android:summary="接受陌生人私聊信息"
+            android:title="陌生信息" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="sponsor_notification"
+            android:summary="赞助活动的通知信息"
+            android:title="赞助信息" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="mgs_notification"
+            android:summary="MGS交易相关的所有信息"
+            android:title="MGS交易" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pc_oldVer"
+        android:title="通知显示、音效及振动">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="enable_display"
+            android:summary="当有新信息，屏幕上方显示通知內容"
+            android:title="屏幕显示通知" />
+        <!--android:dependency="enable_notification"-->
+        <SwitchPreference
+            android:defaultValue="false"
+            android:dependency="enable_display"
+            android:key="enable_vibrate"
+            android:summary="当有新信息，振动提醒"
+            android:title="振动提醒" />
+        <!--android:dependency="enable_notification"-->
+        <SwitchPreference
+            android:defaultValue="false"
+            android:dependency="enable_display"
+            android:key="enable_sound"
+            android:summary="当有新信息，声音提醒"
+            android:title="声音提醒" />
+        <!--android:dependency="enable_notification"-->
+        <RingtonePreference
+            android:defaultValue="content://settings/system/notification_sound"
+            android:dependency="enable_sound"
+            android:key="notifications_ringtone"
+            android:ringtoneType="notification"
+            android:summary="选择通知鈴声类型"
+            android:title="@string/pref_title_ringtone" />
+
+        <!--<ListPreference
+            android:key="options_"
+            android:title="通知效果選項"
+            android:summary="可選擇聲音及震動等多樣化的通知組合效果"
+            android:defaultValue="sound_vibrate"
+            android:entries="@array/set_notification"
+            android:entryValues="@array/set_notificationValues"
+            android:dependency="enable_vibrate" />-->
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pc_newVer"
+        android:title="通知显示、音效及振动">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="priority_On"
+            android:summary="当有新信息，屏幕上方显示通知內容，并发出声响"
+            android:title="设为优先通知" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="登入欢迎词">
+        <EditTextPreference
+            android:defaultValue="因为分享 所以丰盛"
+            android:dialogMessage="您可以自由更改首頁的欢迎词"
+            android:dialogTitle="Welcome Message"
+            android:key="welcome_message"
+            android:summary="請设定一個自己喜欢的欢迎词"
+            android:theme="@style/MyAlertDialogStyle"
+            android:title="設定欢迎词"></EditTextPreference>
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="user_info"
+        android:title="使用信息">
+        <Preference
+            android:summary="@string/app_ver"
+            android:title="APP版本"></Preference>
+        <Preference
+            android:key="location"
+            android:title="所在城市"></Preference>
+<!--        <Preference
+            android:key="lastMessageTime"
+            android:title="Status of Connectivity"></Preference>-->
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="location_notification"
+        android:title="Administrator Management">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:summary="Fuctionalities for system developers"
+            android:key="enable_location_notification"/>
+    </PreferenceCategory>
+</PreferenceScreen>
+

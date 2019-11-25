@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="商店名称">
+        <EditTextPreference
+            android:dialogMessage="您可以在此编辑您的商店名称"
+            android:dialogTitle="编辑商店名称"
+            android:key="StoreName"
+            android:summary="請编辑您的商店名称"
+            android:title="编辑商店名称">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="BOCurrency"
+        android:summary="請设定您的商店点别"
+        android:title="商店点别設定">
+        <ListPreference
+            android:entries="@array/credit_options"
+            android:entryValues="@array/credit_options"
+            android:key="credit_options"
+            android:title="点别选择" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="折扣设定">
+        <EditTextPreference
+            android:dialogMessage="您可以在此设定您的商店折扣"
+            android:dialogTitle="设定商店折扣"
+            android:key="Discount"
+            android:inputType="number"
+            android:summary="设定您的商店折扣"
+            android:title="设定商店折扣">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="返利设定">
+        <ListPreference
+            android:entries="@array/rebate_options"
+            android:entryValues="@array/isPercent"
+            android:key="isPercent"
+            android:title="返利型式选择" />
+        <EditTextPreference
+            android:dialogMessage="您可以在此设定您的商店返利"
+            android:dialogTitle="设定商店返利"
+            android:key="MR"
+            android:inputType="number"
+            android:summary="设定您的商店返利"
+            android:title="设定商店返利">
+        </EditTextPreference>
+    </PreferenceCategory>
+</PreferenceScreen>
+
+

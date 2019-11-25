@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item android:id="@+id/blockchain"
+        android:title="menu_blockchain"
+        android:orderInCategory="80"
+        android:icon="@drawable/baseline_extension_white_18dp"
+        android:visible="false"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/delete"
+        android:title="menu_delete"
+        android:orderInCategory="80"
+        android:icon="@drawable/baseline_delete_outline_white_18dp"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_ChatIcon"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="@drawable/tips_circle_maakki_red"
+        android:padding="7dp"
+        android:src="@drawable/ic_launcher"
+        />
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="7dp"
+        android:background="@drawable/textview_solid_accent"
+        android:paddingLeft="11dp"
+        android:paddingTop="8dp"
+        android:paddingRight="11dp"
+        android:paddingBottom="8dp"
+        android:text="msg"
+        android:textColor="#fff"
+        android:textSize="11dp"
+        android:visibility="gone"/>
+</RelativeLayout>
