@@ -62,7 +62,7 @@ import java.util.List;
  */
 
 public class FriendList extends AppCompatActivity {
-    private String redUrl = "https://www.maakki.cc/community/ecard.aspx";
+    private String redUrl = "http://www.maakki.cc/community/ecard.aspx";
     private final String NAMESPACE = "http://www.maakki.com/";
     private final String URL = "http://www.maakki.com/WebService.asmx";
     private ArrayList ignoreList;

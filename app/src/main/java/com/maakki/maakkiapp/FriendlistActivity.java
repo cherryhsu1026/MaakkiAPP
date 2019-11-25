@@ -68,7 +68,7 @@ public class FriendlistActivity extends AppCompatActivity {
 
 
     public void goFriendlist() {
-        String redUrl = "https://www.maakki.cc/community/Friendlist.aspx?act_type=Invite";
+        String redUrl = "http://www.maakki.cc/community/Friendlist.aspx?act_type=Invite";
         //Toast.makeText(getApplicationContext(), "redUri="+redUrl, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(FriendlistActivity.this, WebMain2.class);
         Bundle bundle = new Bundle();

@@ -364,7 +364,7 @@ public class PreNotificationList extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "redUrl:"+redUrl, Toast.LENGTH_SHORT).show();
                             break;
                         case 6:
-                            redUrl = "https://www.maakki.cc/MGS/MGSMainpage.aspx";
+                            redUrl = "http://www.maakki.cc/MGS/MGSMainpage.aspx";
                         case 7:
                             //点击来自使用者的客服要求通知
                             intent = new Intent(PreNotificationList.this, Chat_CustomerService.class);

@@ -110,7 +110,7 @@ public class imaimai_Main extends Activity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String redUrl="https://www.maakki.cc/MCoins/MCoinsQuery.aspx";
+                String redUrl="http://www.maakki.cc/MCoins/MCoinsQuery.aspx";
                 Intent intent = new Intent(imaimai_Main.this, WebMain2.class);
                 intent.putExtra("redirUrl", redUrl);
                 startActivity(intent);

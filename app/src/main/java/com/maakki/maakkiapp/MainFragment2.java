@@ -49,7 +49,7 @@ public class MainFragment2 extends Fragment {
     ImageView iv_goc, iv_customerservive, iv_errpage;
     RelativeLayout RL_Errpage;
     private WebView mWebView;
-    private String redUrl = "https://www.maakki.cc/community/ecard.aspx";
+    private String redUrl = "http://www.maakki.cc/community/ecard.aspx";
     private String mMaakkiID = "";
     private String mMemID = "";
     private String mName = "";
@@ -341,7 +341,7 @@ public class MainFragment2 extends Fragment {
             SharedPreferencesHelper.putSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key9, title);
             s = "<img src=\"";
             ix = html.indexOf(s) + s.length();
-            String ImageUrl = "https://www.maakki.cc" + html.substring(ix, html.indexOf("\"", ix + 1));
+            String ImageUrl = "http://www.maakki.cc" + html.substring(ix, html.indexOf("\"", ix + 1));
             //Toast.makeText(getActivity(),ImageUrl,Toast.LENGTH_LONG).show();
             SharedPreferencesHelper.putSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key10, ImageUrl);
         }
@@ -538,7 +538,7 @@ public class MainFragment2 extends Fragment {
             }
             view.loadUrl("javascript:window.HTMLOUT.getHtml('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
             /*imageUrl=SharedPreferencesHelper.getSharedPreferencesString(this, SharedPreferencesHelper.SharedPreferencesKeys.key10, "");
-            imageUrl="https://www.maakki.cc/ashx/showImage.ashx?width=689&height=689&file_id=E16EDECC-ffafcjiejfGcCiHhjpg13";
+            imageUrl="http://www.maakki.cc/ashx/showImage.ashx?width=689&height=689&file_id=E16EDECC-ffafcjiejfGcCiHhjpg13";
             if(!imageUrl.equals("")){
                 imageLoader.displayImage(imageUrl, imgview);
             }*/

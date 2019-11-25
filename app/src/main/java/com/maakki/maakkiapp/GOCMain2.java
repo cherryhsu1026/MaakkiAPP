@@ -150,7 +150,7 @@ public class GOCMain2 extends Activity {
 
             @Override
             public void onClick(View v) {
-                String redUrl = "https://www.maakki.cc/MCoins/MCoinsQuery.aspx";
+                String redUrl = "http://www.maakki.cc/MCoins/MCoinsQuery.aspx";
                 Intent intent = new Intent(GOCMain2.this, WebMain2.class);
                 intent.putExtra("redirUrl", redUrl);
                 startActivity(intent);

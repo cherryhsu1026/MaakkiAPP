@@ -34,7 +34,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class WebMain extends AppCompatActivity implements ShareActionProvider.OnShareTargetSelectedListener {
 
-    //private String shareUrl = "https://www.maakki.cc/";
+    //private String shareUrl = "http://www.maakki.cc/";
     private static final String TAG = WebMain.class.getSimpleName();
     private static final int REQUEST_CODE_QR_SCAN = 101;
     //MainFragment mf = new MainFragment();
@@ -44,7 +44,7 @@ public class WebMain extends AppCompatActivity implements ShareActionProvider.On
     Intent shareIntent;
     ImageView imgview;
     private ShareActionProvider mShareActionProvider;
-    private String redUrl = "https://www.maakki.cc/community/ecard.aspx";
+    private String redUrl = "http://www.maakki.cc/community/ecard.aspx";
     //private String mMemID="";
     private String mName = "";
     private ImageLoader imageLoader;
@@ -61,7 +61,7 @@ public class WebMain extends AppCompatActivity implements ShareActionProvider.On
             Bundle bundle = this.getIntent().getExtras();
             redUrl = bundle.getString("redirUrl");
         } else {
-            redUrl = "https://www.maakki.cc/community/NotifyMain.aspx";
+            redUrl = "http://www.maakki.cc/community/NotifyMain.aspx";
         }
         args.putString("redUrl", redUrl);
         //args.putString("mMemID", mMemID);
@@ -363,7 +363,7 @@ public class WebMain extends AppCompatActivity implements ShareActionProvider.On
             //Log.i(TAG, "doInBackground");
 
             //imageUrl=SharedPreferencesHelper.getSharedPreferencesString(this, SharedPreferencesHelper.SharedPreferencesKeys.key10, "");
-            imageUrl = "https://www.maakki.cc/ashx/showImage.ashx?width=689&height=689&file_id=E16EDECC-ffafcjiejfGcCiHhjpg13";
+            imageUrl = "http://www.maakki.cc/ashx/showImage.ashx?width=689&height=689&file_id=E16EDECC-ffafcjiejfGcCiHhjpg13";
             if (!imageUrl.equals("")) {
                 imageLoader.displayImage(imageUrl, imgview);
             }

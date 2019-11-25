@@ -34,8 +34,8 @@ import java.util.Date;
 
 public class ServiceUtil {
     private static String NAMESPACE = "http://www.maakki.com/";
-    private static String URL = "https://www.maakki.cc/WebServiceIA.asmx";
-    private static String URL_WS = "https://www.maakki.cc/WebService.asmx";
+    private static String URL = "http://www.maakki.cc/WebServiceIA.asmx";
+    private static String URL_WS = "http://www.maakki.cc/WebService.asmx";
     static String errMsg,errCode;
     public static boolean isServiceRunning(Context context, String serviceName) {
         boolean isServiceRunning = false;

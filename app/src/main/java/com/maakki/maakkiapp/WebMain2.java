@@ -39,7 +39,7 @@ public class WebMain2 extends AppCompatActivity implements ShareActionProvider.O
     private static final int REQUEST_CODE_QR_SCAN = 101;
     Bundle args = new Bundle();
     Context context;
-    private String redUrl = "https://www.maakki.cc/community/ecard.aspx";
+    private String redUrl = "http://www.maakki.cc/community/ecard.aspx";
     //float scrollp=0;
     int yPos=0;
     private ShareActionProvider mShareActionProvider;
@@ -54,7 +54,7 @@ public class WebMain2 extends AppCompatActivity implements ShareActionProvider.O
             redUrl = bundle.getString("redirUrl");
             yPos = bundle.getInt("yPos");
         } else {
-            redUrl = "https://www.maakki.cc/community/NotifyMain.aspx";
+            redUrl = "http://www.maakki.cc/community/NotifyMain.aspx";
         }
         //MainFragment2 mf = new MainFragment2();
         CoreFragment mf = new CoreFragment();
