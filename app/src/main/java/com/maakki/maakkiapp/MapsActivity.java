@@ -314,7 +314,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 public void onInfoWindowClick(Marker marker) {
                     String mMaakkiID = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "");
                     String ssid = String.valueOf(marker.getTag());
-                    String redUrl = "http://www.maakki.com/BOStoreData.aspx?entrepot_id=" + ssid + "&mid=" + mMaakkiID;
+                    String redUrl =  StaticVar.webURL+"/BOStoreData.aspx?entrepot_id=" + ssid + "&mid=" + mMaakkiID;
                     Intent intent = new Intent(getApplicationContext(), WebMain2.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("redirUrl", redUrl);

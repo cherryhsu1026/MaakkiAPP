@@ -27,7 +27,7 @@ import java.util.Date;
 public class GOCMain extends Activity {
 
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
     private ImageView imgLogo;
     private TextView tv_question, tv_slogan, tv_goc, tv_content1, tv_content2, tv_content3, tv_gain, tv_30, tv_60, tv_90, tv_15, tv_url;
     private ImageView ivBack;

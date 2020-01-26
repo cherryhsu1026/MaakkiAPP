@@ -22,7 +22,7 @@ public class SignalRUtil {
     private static int intervalMessageTime = 1000 * 2;
     private static final int Timer_Check_INTERVAL = 1000 * 60; // 60 seconds
     private static final int DAEMON_CHECK_INTERVAL = 1000 * 3;
-    private static final String HUB_URL = "http://www.maakki.com/";
+    private static final String HUB_URL = StaticVar.webURL+"/";
     private static final String HUB_NAME = "maakkiHub";
     private static final String HUB_Method_Connection = "userConnected";
     private static final String HUB_chat_private_Send = "chatSend";

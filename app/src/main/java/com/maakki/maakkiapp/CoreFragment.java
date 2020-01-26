@@ -67,7 +67,7 @@ public class CoreFragment extends Fragment {
     private int yPos = 0;
     float scrollp;
     private WebView mWebView;
-    private String redUrl = "http://www.maakki.com/community/ecard.aspx";
+    private String redUrl = StaticVar.webURL+"/community/ecard.aspx";
     private String mMaakkiID = "", errMsg = "", identity = "";
     private String mMemID = "";
     private String mName = "";
@@ -115,9 +115,9 @@ public class CoreFragment extends Fragment {
                     if (keyCode == KeyEvent.KEYCODE_BACK) {  //表示按返回键 时的操作
                         //&& mWebView.canGoBack()
                         //Toast.makeText(getActivity(), "right:"+currentUrl, Toast.LENGTH_LONG).show();
-                        if (currentUrl.contains("maakki.com/community/ecard.aspx")) {
+                        if (currentUrl.contains(StaticVar.DomainName+"/community/ecard.aspx")) {
                             //ignore the click;
-                        } else if(currentUrl.contains("www.maakki.com/Mall/proDetail.aspx?pro_id=")){
+                        } else if(currentUrl.contains(StaticVar.DomainName+"/Mall/proDetail.aspx?pro_id=")){
                             //String historyUrl="";
                             //myWebView = (WebView) findViewById(R.id.webViewContent);
                             //WebBackForwardList mWebBackForwardList = mWebView.copyBackForwardList();
@@ -203,7 +203,7 @@ public class CoreFragment extends Fragment {
 
             @Override
             public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-                if (url.contains("maakki.com/community/ecard.aspx")) {
+                if (url.contains(StaticVar.DomainName+"/community/ecard.aspx")) {
                     //Toast.makeText(getActivity(),"message:"+message,Toast.LENGTH_LONG).show();
                     if (mMemID.equals("")) {
                         String[] msg = message.split("/");
@@ -230,7 +230,7 @@ public class CoreFragment extends Fragment {
                         }
                     }
                 }else
-                if (url.contains("maakki.com/Mall/proDetail.aspx")) {
+                if (url.contains(StaticVar.DomainName+"/Mall/proDetail.aspx")) {
                     //Toast.makeText(getActivity(),"message:"+message,Toast.LENGTH_LONG).show();
                     ProList_url=message;
                 }
@@ -426,7 +426,7 @@ public class CoreFragment extends Fragment {
             SharedPreferencesHelper.putSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key9, title);
             s = "<img src=\"";
             ix = html.indexOf(s) + s.length();
-            String ImageUrl = "http://www.maakki.com" + html.substring(ix, html.indexOf("\"", ix + 1));
+            String ImageUrl = StaticVar.webURL + html.substring(ix, html.indexOf("\"", ix + 1));
             //Toast.makeText(getActivity(),ImageUrl,Toast.LENGTH_LONG).show();
             SharedPreferencesHelper.putSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key10, ImageUrl);
         }
@@ -465,7 +465,7 @@ public class CoreFragment extends Fragment {
                 Intent i=new Intent(getActivity(),FriendList.class);
                 startActivity(i);
             }
-            else if (url.contains("maakki.com/maakki-manual/fileDownload_oncall.aspx")) {
+            else if (url.contains( StaticVar.DomainName+"/maakki-manual/fileDownload_oncall.aspx")) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(browserIntent);
             }
@@ -483,7 +483,7 @@ public class CoreFragment extends Fragment {
                 startActivity(browserIntent);
             }
 
-            else if (url.contains("maakki.com/logout")) {
+            else if (url.contains( StaticVar.DomainName+"/logout")) {
                 mName = SharedPreferencesHelper.getSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key2, "");
                 Toast.makeText(getActivity(), mName + ",bye~", Toast.LENGTH_LONG).show();
                 stopLocalService();
@@ -511,7 +511,7 @@ public class CoreFragment extends Fragment {
                 Toast.makeText(getActivity(),"yPos:"+yPos,Toast.LENGTH_LONG).show();
                 mWebView.scrollTo(0,100);
             }*/
-            if (url.contains("maakki.com/dream/addSponsor.")) {
+            if (url.contains(StaticVar.DomainName+"/dream/addSponsor.")) {
                     iv_addSponsor.setVisibility(View.VISIBLE);
             }else{
                 iv_addSponsor.setVisibility(View.GONE);
@@ -524,7 +524,7 @@ public class CoreFragment extends Fragment {
                     startActivity(intent);
                 }
             });
-            if (url.contains("maakki.com/Mall/StoreInfo.aspx?supplier_id=")) {
+            if (url.contains(StaticVar.DomainName+"/Mall/StoreInfo.aspx?supplier_id=")) {
                 final String cSupplierId = url.split("=")[1];
                 final String sName = "";
                 SignalRUtil su = new SignalRUtil();
@@ -565,13 +565,13 @@ public class CoreFragment extends Fragment {
                     startActivity(i);
                 }
             });
-            if (url.contains("maakki.com/IA")) {
+            if (url.contains(StaticVar.DomainName+"/IA")) {
                 AsyncCallWS_getIdentity getIdentityTask = new AsyncCallWS_getIdentity();
                 getIdentityTask.execute();
             } else {
                 iv_openIA.setVisibility(View.INVISIBLE);
             }
-            if (url.contains("maakki.com/RA") & (mMaakkiID.equals("1") || mMaakkiID.equals("10006"))) {
+            if (url.contains(StaticVar.DomainName+"/RA") & (mMaakkiID.equals("1") || mMaakkiID.equals("10006"))) {
                 iv_openIA.setVisibility(View.VISIBLE);
             } else {
                 iv_openIA.setVisibility(View.INVISIBLE);
@@ -592,13 +592,13 @@ public class CoreFragment extends Fragment {
                     startActivity(i);
                 }
             });
-            if (url.contains("www.maakki.com/admin/") & (mMaakkiID.equals("1") || mMaakkiID.equals("10006"))) {
+            if (url.contains(StaticVar.DomainName+"/admin/") & (mMaakkiID.equals("1") || mMaakkiID.equals("10006"))) {
                 iv_systemadmin.setVisibility(View.VISIBLE);
             } else {
                 iv_systemadmin.setVisibility(View.GONE);
             }
             //set imaimai entry icon visible
-            if (url.contains("maakki.com/MCoins/")) {
+            if (url.contains(StaticVar.DomainName+"/MCoins/")) {
                 iv_goc.setVisibility(View.VISIBLE);
                 Boolean isRead = SharedPreferencesHelper.getSharedPreferencesBoolean(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key15, false);
                 Integer sharedpref_date = SharedPreferencesHelper.getSharedPreferencesInt(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key17, 0);
@@ -625,7 +625,7 @@ public class CoreFragment extends Fragment {
                 iv_goc.setVisibility(View.INVISIBLE);
             }
             //客服专线图案
-            if (url.contains("maakki.com/Maakki-manual/")) {
+            if (url.contains(StaticVar.DomainName+"/Maakki-manual/")) {
                 Boolean isCustomerServiceOnline = isCustomerServiceOnlineOrNot();
                 //SharedPreferencesHelper.getSharedPreferencesBoolean(getActivity(),SharedPreferencesHelper.SharedPreferencesKeys.key12,false);
                 //Boolean isCustomerServiceOnline=true;
@@ -659,10 +659,10 @@ public class CoreFragment extends Fragment {
                 iv_customerservice.setVisibility(View.GONE);
             }
             //只要再回到電子名片主頁，就检视getMaakkiAppData()回应的信息
-            if (url.contains("maakki.com/community/ecard.aspx")) {
+            if (url.contains(StaticVar.DomainName+"/community/ecard.aspx")) {
                 String str = "javascript:alert(getMaakkiAppData10())";
                 view.loadUrl(str);
-            } else if (url.contains("maakki.com/Mall/proDetail.aspx")) {
+            } else if (url.contains(StaticVar.DomainName+"/Mall/proDetail.aspx")) {
                 String str = "javascript:alert(getWindowlocation_Maakk10())";
                 view.loadUrl(str);
             }else if (url.contains(StaticVar.DomainName+"/BOlist.aspx") || url.contains(StaticVar.DomainName+"/BOStoreData.aspx")) {
@@ -721,9 +721,9 @@ public class CoreFragment extends Fragment {
 
     private void getIdentity() {
         String NAMESPACE = "http://www.maakki.com/";
-        String URL = "http://www.maakki.com/WebService.asmx";
+        String URL =StaticVar.webURL+ "/WebService.asmx";
         String METHOD_NAME = "getIdentity";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.webURL+"/" + METHOD_NAME;
         String timeStamp = String.valueOf(new Date().getTime());
         String identifyStr = getHashCode(mMaakkiID + "M@@kki.cc" + timeStamp.trim()).toUpperCase();
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -802,9 +802,9 @@ public class CoreFragment extends Fragment {
 
     private void validIAReferral() {
         String NAMESPACE = "http://www.maakki.com/";
-        final String URL = "http://www.maakki.com/WebServiceIA.asmx";
+        final String URL = StaticVar.webURL+"/WebServiceIA.asmx";
         String METHOD_NAME = "validIAReferral";
-        String SOAP_ACTION = "http://www.maakki.com/validIAReferral";
+        String SOAP_ACTION = StaticVar.webURL+"/validIAReferral";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         request.addProperty("maakki_id", mMaakkiID);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(

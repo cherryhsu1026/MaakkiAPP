@@ -72,8 +72,8 @@ public class Open_IA extends Activity {
     private EditText et_account, et_nickname, et_password, et_password2, et_phonenumber, et_verificode, et_introducer;
     private boolean isSpecific,is12,is50,is42,is10,is11,is20,is40,is41,is72338,istoday,isyesterday,isArea,isLocality,isSublocality,isn50,is0, is17142,hasPasswordChecked, hasPhonenumberChecked, hasVericode, hasIntroducerChecked;
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebServiceIA.asmx";
-    private final String URL_WS = "http://www.maakki.com/WebService.asmx";
+    private final String URL =  StaticVar.webURL+"/WebServiceIA.asmx";
+    private final String URL_WS =  StaticVar.webURL+"/WebService.asmx";
     private Spinner spinner;
     private EditText et_remittance_name_cashier, et_remittance_name, et_remittance_account, et_remittance_account_cashier;
     private List<_IAApplyData> listIAApplyData;

@@ -69,7 +69,7 @@ import java.util.List;
 public class OrderComfirm extends AppCompatActivity {
     private static final int REQUEST_CODE_QR_SCAN = 101;
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
     ImageView iv_getall, iv_edit, iv_right, iv_left, iv_sum, iv_seat;
     FloatingActionButton fab;
     //final EditText editText_maakki_id;
@@ -1058,7 +1058,7 @@ public class OrderComfirm extends AppCompatActivity {
     private void getWebService_POSISMember() {
         //Create request
         String METHOD_NAME = "POSIsMember";
-        String SOAP_ACTION = "http://www.maakki.com/POSIsMember";
+        String SOAP_ACTION = StaticVar.webURL+"/POSIsMember";
         //String METHOD_NAME = "getOnlineList";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String bo_maakkiid = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "");
@@ -1114,7 +1114,7 @@ public class OrderComfirm extends AppCompatActivity {
     private void getWebService_POSCheck() {
         //Create request
         String METHOD_NAME = "POSCheck";
-        String SOAP_ACTION = "http://www.maakki.com/POSCheck";
+        String SOAP_ACTION = StaticVar.webURL+"/POSCheck";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String bo_maakkiid = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "");
         //int bo_id, int cs_id, Int64 timeStamp, string BOCurrency, int check_id, decimal price, decimal iCredit, int pid, string ck, string identifyStr)
@@ -1232,7 +1232,7 @@ public class OrderComfirm extends AppCompatActivity {
                 //holder.image_icon.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.tips_circle_accent));
             }
             //String mpicfile=s.getPicfile();
-            //String pic_url = "http://www.maakki.com/function/getImage.aspx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
+            //String pic_url = StaticVar.webURL+ "/function/getImage.aspx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
             //if(holder.image.getDisplay()==null){
             //new DownloadImageTask(holder.image_icon).execute(pic_url);
 

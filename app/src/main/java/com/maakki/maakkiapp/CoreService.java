@@ -83,7 +83,7 @@ public class CoreService extends Service {
     private static final int DAEMON_SLEEP_INTERVAL = 1000 * 20;
     private static final int intervalMessageTime = 500;
     private Long intervalTime = 0L;
-    private static final String HUB_URL = "http://www.maakki.com/";
+    private static final String HUB_URL = StaticVar.webURL+"/";
     private static final String HUB_NAME = "maakkiHub";
     private static final String HUB_Method_DisConnection = "userDisConnected";
     private static final String HUB_AsyncStoreData = "AsyncStoreData";
@@ -721,7 +721,7 @@ public class CoreService extends Service {
             //Boolean isChatPubic=sharedPrefs.getBoolean("chat_public", true);
             nContentTitle = "";
             MessageType = 0;
-            String pic_url = "http://www.maakki.com/image/icon.png";
+            String pic_url =StaticVar.webURL+ "/image/icon.png";
             Intent intent = new Intent(getApplicationContext(), WebMain2.class);
             Bundle bundle = new Bundle();
             bundle.putString("mName", mName);
@@ -732,7 +732,7 @@ public class CoreService extends Service {
             messagetitle = cMemID + "/" + cName + "/" + nMessage;
             switch (msgType) {
                 case "redEnvelope":
-                    //redUrl="http://www.maakki.com/community/chat.aspx";
+                    //redUrl=StaticVar.webURL+"/community/chat.aspx";
                     //nMessage=nMessage+":"+cName;
                     nContentTitle = cName + " 发了一个赞助红包：";
                     messagetitle = cName;
@@ -747,7 +747,7 @@ public class CoreService extends Service {
                     isNotify = sharedPrefs.getBoolean("sponsor_notification", true);
                     break;
                 case "chat_private":
-                    //redUrl="http://www.maakki.com/community/chat.aspx?Contact="+cMemID;
+                    //redUrl=StaticVar.webURL+"/community/chat.aspx?Contact="+cMemID;
                     bundle.putString("isPrivate", "true");
                     String[] msg = nMessage.split(":");
                     if (msg[0].equals("MsGseNdedtoCusTSErv")) {

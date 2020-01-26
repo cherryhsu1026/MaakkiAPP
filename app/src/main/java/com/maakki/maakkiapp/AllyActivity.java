@@ -69,8 +69,8 @@ public class AllyActivity extends Activity {
     private EditText et_envelope_no, et_iCredits,et_phonenumber, et_verificode, et_introducer;
     private boolean isDown, hasChangedtoUSD, isTarget, isAnonymous,isBuildupbyic, isSpecific, is12, is50, is42, is10, is11, is20, is40, is41, is72338, istoday, isyesterday, isArea, isLocality, isSublocality, isn50, is0, is17142, hasPasswordChecked, hasPhonenumberChecked, hasVericode, hasIntroducerChecked;
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebServiceIA.asmx";
-    private final String URL_WS = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebServiceIA.asmx";
+    private final String URL_WS = StaticVar.webURL+"/WebService.asmx";
     private List<_IAApplyData> listIAApplyData;
     private double erUSD = 1l, erRMB = 1l, erHKD = 1l, erMYR = 1l, erJPY = 1l, memberFG = 0l, actualSponsorAmt = 0l, iCredit = 0l;
     private String realPath,picFileID, member_id, strCurrency, default_sponsoriCredit, targetStr, target_maakki_id, currency = "RMB";
@@ -230,7 +230,7 @@ public class AllyActivity extends Activity {
     private void getMemberFG() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getMemberFG";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.webURL+"/" + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "MDF-M@@kki.cc" + timeStamp.trim();
@@ -336,7 +336,7 @@ public class AllyActivity extends Activity {
     private void getMemberProfile() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getMemberProfile";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.webURL+"/" + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id + "MDF-M@@kki.cc" + timeStamp.trim();
@@ -418,7 +418,7 @@ public class AllyActivity extends Activity {
     private void getiCreditBalance() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getiCreditBalance";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION =  StaticVar.webURL+"/" + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim();
@@ -500,7 +500,7 @@ public class AllyActivity extends Activity {
     private void getExchangeRate() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getExchangeRate";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.webURL+"/" + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);

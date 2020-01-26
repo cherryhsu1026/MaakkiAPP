@@ -53,7 +53,7 @@ public class POSPrefsActivity extends PreferenceActivity {
     private static String appVersion;
     private static String BOCurrency, StoreName, Discount, isPercent, MR, errMsg;
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
     private Preference pfMR;
     private Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override

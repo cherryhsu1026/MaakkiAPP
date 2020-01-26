@@ -79,7 +79,7 @@ public class ImageAdapter extends BaseAdapter {
         holder.text.setText(nickname);
 
         String mpicfile = f.getPicfilePath();
-        String pic_url = "http://www.maakki.com/function/getImage.aspx?file_id=" + mpicfile + "&width=120&height=120&forcibly=Y&dimg=Y";
+        String pic_url = StaticVar.webURL+"/function/getImage.aspx?file_id=" + mpicfile + "&width=120&height=120&forcibly=Y&dimg=Y";
         //if(holder.image.getDisplay()==null){
         //new DownloadImageTask(holder.image).execute(pic_url);
         //}

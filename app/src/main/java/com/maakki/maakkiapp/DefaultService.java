@@ -43,7 +43,7 @@ import microsoft.aspnet.signalr.client.transport.ServerSentEventsTransport;
  * Created by ryan on 2016/2/26.
  */
 public class DefaultService extends Service {
-    private static final String HUB_URL = "http://www.maakki.com/";
+    private static final String HUB_URL =StaticVar.webURL+ "/";
     private static final String HUB_NAME = "maakkiHub";
     private static final String HUB_Method_DisConnection = "userDisConnected";
     private static final String HUB_AsyncStoreData = "AsyncStoreData";
@@ -484,7 +484,7 @@ public class DefaultService extends Service {
             String nContentTitle = "";
             Integer MessageType = 0;
 
-            String pic_url = "http://www.maakki.com/image/icon.png";
+            String pic_url = StaticVar.webURL+"/image/icon.png";
             Intent intent = new Intent(getApplicationContext(), WebMain.class);
             Bundle bundle = new Bundle();
             bundle.putString("mName", mName);
@@ -496,7 +496,7 @@ public class DefaultService extends Service {
             String messagetitle = cMemID + "/" + cName + "/" + nMessage;
             switch (msgType) {
                 case "chat":
-                    //redUrl="http://www.maakki.com/community/chat.aspx";
+                    //redUrl=StaticVar.webURL+"/community/chat.aspx";
                     nContentTitle = cName + "在「开讲」说：";
                     messagetitle = cName;
                     //nMessage=nMessage+"/"+mMemID;
@@ -510,7 +510,7 @@ public class DefaultService extends Service {
 
                     break;
                 case "chat_private":
-                    //redUrl="http://www.maakki.com/community/chat.aspx?Contact="+cMemID;
+                    //redUrl=StaticVar.webURL+"/community/chat.aspx?Contact="+cMemID;
 
                     bundle.putString("isPrivate", "true");
                     String[] msg = nMessage.split(":");
@@ -577,7 +577,7 @@ public class DefaultService extends Service {
                         }
                     }
                     //else{
-                    //redUrl="http://www.maakki.com/MGS/MGSMainpage.aspx";
+                    //redUrl=StaticVar.webURL+"/MGS/MGSMainpage.aspx";
                     //}
                     nContentTitle = mName + "，Maakki通知你：";
                     break;
@@ -603,7 +603,7 @@ public class DefaultService extends Service {
 
             //remote_picture = BitmapFactory. decodeResource(this.getResources(),R.drawable.logo_s);
             if (!cpicfile.equals("00003.jpg")) {
-                pic_url = "http://www.maakki.com/function/getImage.aspx?file_id=" + cpicfile + "&width=60&height=60&forcibly=Y&dimg=Y";
+                pic_url =StaticVar.webURL+ "/function/getImage.aspx?file_id=" + cpicfile + "&width=60&height=60&forcibly=Y&dimg=Y";
                 //new DownloadBitmapTask(remote_picture)
                 //        .execute(pic_url);
                 try {

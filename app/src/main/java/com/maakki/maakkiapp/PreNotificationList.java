@@ -48,7 +48,7 @@ import me.leolin.shortcutbadger.ShortcutBadger;
 
 public class PreNotificationList extends AppCompatActivity {
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
     //RelativeLayout newitem;
     ListView listview;
     Button btn, btn_online;

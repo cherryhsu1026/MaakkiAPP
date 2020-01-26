@@ -31,7 +31,7 @@ public class DaemonReceiver1 extends BroadcastReceiver {
     private static final String HUB_Method_Connection = "userConnected";
     private HubProxy mHub;
     private static final String HUB_chat_private_Send = "chatSend";
-    private static final String HUB_URL = "http://www.maakki.com/";
+    private static final String HUB_URL = StaticVar.webURL+"/";
     private static final String HUB_NAME = "maakkiHub";
     private SignalRFuture<Void> mSignalRFuture;
     double latitude; // latitude

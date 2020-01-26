@@ -51,10 +51,10 @@ import microsoft.aspnet.signalr.client.transport.ServerSentEventsTransport;
 
 public class Chat_red extends AppCompatActivity {
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
     final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
     //private Toolbar toolbar;
-    private static final String HUB_URL = "http://www.maakki.com/";
+    private static final String HUB_URL = StaticVar.webURL+"/";
     private static final String HUB_NAME = "maakkiHub";
     private static final String HUB_Method_Connection = "userConnected";
     //private static final String HUB_chat_public_Send="chat_public";

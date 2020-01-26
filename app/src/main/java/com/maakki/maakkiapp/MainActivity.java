@@ -10,7 +10,7 @@ import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    private String redUrl = "http://www.maakki.com/community/ecard.aspx";
+    private String redUrl = StaticVar.webURL+"/community/ecard.aspx";
     public final static String PREFERENCE_NAME = "mypreference";
 
     @Override

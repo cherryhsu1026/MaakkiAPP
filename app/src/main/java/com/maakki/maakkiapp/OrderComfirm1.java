@@ -72,7 +72,7 @@ public class OrderComfirm1 extends AppCompatActivity {
     private static final int REQUEST_CODE_QR_SCAN = 101;
     Toolbar myToolbar;
     /*private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL =  StaticVar.webURL+"/WebService.asmx";
     ImageView iv_getall, iv_edit, iv_right, iv_left, iv_sum, iv_seat;
     FloatingActionButton fab;
     //final EditText editText_maakki_id;

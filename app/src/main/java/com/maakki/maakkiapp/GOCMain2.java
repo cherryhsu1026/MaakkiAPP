@@ -41,7 +41,7 @@ import java.util.Date;
 public class GOCMain2 extends Activity {
 
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
     Scene mAScene, mAnotherScene;
     ViewGroup mSceneRoot;
     Transition mATransition;

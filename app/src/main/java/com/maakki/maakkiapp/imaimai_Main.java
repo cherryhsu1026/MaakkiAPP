@@ -24,7 +24,7 @@ import java.util.Date;
 public class imaimai_Main extends Activity {
 
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
     private ImageView imgLogo;
     private TextView tv_slogan, tv_content1, tv_1, tv_2, tv_3, tv_4, tv_next;
     private ImageView ivBack;
@@ -110,7 +110,7 @@ public class imaimai_Main extends Activity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String redUrl="http://www.maakki.com/MCoins/MCoinsQuery.aspx";
+                String redUrl=StaticVar.webURL+"/MCoins/MCoinsQuery.aspx";
                 Intent intent = new Intent(imaimai_Main.this, WebMain2.class);
                 intent.putExtra("redirUrl", redUrl);
                 startActivity(intent);

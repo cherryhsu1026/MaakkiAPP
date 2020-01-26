@@ -49,7 +49,7 @@ import java.util.List;
 
 public class GetRemitList extends AppCompatActivity {
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
     Toolbar myToolbar;
     RelativeLayout RL,RL_condition_day;
     ListView listview;

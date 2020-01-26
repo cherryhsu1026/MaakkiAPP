@@ -55,8 +55,8 @@ public class imaimai_order extends Activity {
     private SharedPreferences.Editor prefs;
     private Thread coreThread = null;
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.com/WebService.asmx";
-    private final String URL_IA = "http://www.maakki.com/WebServiceIA.asmx";
+    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String URL_IA = StaticVar.webURL+"/WebServiceIA.asmx";
     private TextView tv_13, tv_area, tv_locality, tv_sublocality, tv_n50, tv_0, tv_17142, tv_72338, tv_NextStepTime, tv_today, tv_yesterday, tv_RemittanceTime_Cashier, tv_RemittanceTime, tv_cashin_cashier, tv_refund_admin, tv_cancel_cashier, tv_report_cashier, tv_confirm_order_admin, tv_confirm_cashout_admin, tv_cancel_admin, tv_BankInfo, tv_errMsg, tv_location;
     private ImageView ivSetup, ivImaimai, ivIdentity, ivQuestion, ivAdmin, ivCashier, iv_right, iv_left, ivList, imgLogo, ivBack, imgLogo_imaimai;
     private TextView tv_selected_amount, tv_selected_no, tv_refund_imaimai, tv_20, tv_50, tv_11, tv_12, tv_42, tv_41, tv_40, tv_10, tv_RemittanceInfo, tv_confirm_report_cashier, tv_cancel_report_cashier, tv_refund_cashier, tv_confirm_report, tv_cancel_report, tv_refund, tv_cancel, tv_report, tv_NextStep, tv_Exclamation, tv_ordertime, tv_orderno, tv_next, tv_content1, tv_content2, tv_content3, tv_content4, tv_content5, tv_ordermain, tv_1, tv_2, tv_3, tv_4, tv_icreditsrecallrate;

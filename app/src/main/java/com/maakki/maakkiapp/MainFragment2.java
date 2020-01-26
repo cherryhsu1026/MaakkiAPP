@@ -463,7 +463,7 @@ public class MainFragment2 extends Fragment {
                 mMemID = "";
                 mName = "";
             }
-            //if(url.startsWith("http://www.maakki.com/BOStoreData.aspx")){
+            //if(url.startsWith(StaticVar.webURL+"/BOStoreData.aspx")){
             //Toast.makeText(getActivity(), ",Hi~"+url, Toast.LENGTH_LONG).show();
             //}
 
