@@ -106,7 +106,7 @@ public class CoreService extends Service {
     private static final String HUB_chat_public_Send = "chat_public";
     Bitmap remote_picture;
     private static String NAMESPACE = "http://www.maakki.com/";
-    private static String URL_WS = "http://www.maakki.cc/WebService.asmx";
+    private static String URL_WS = StaticVar.webURL+"/WebService.asmx";
     static String errMsg,errCode;
     //Alarm alarm = new Alarm();
     Boolean isVibrate, isDisplay, isNotify, isSound;
@@ -352,7 +352,7 @@ public class CoreService extends Service {
                 cName = "";
                 //String msgType = msg[0];
                 NotifySender = sender;
-                redUrl = "http://www.maakki.cc/" + notifyUrl;
+                redUrl = StaticVar.webURL+"/" + notifyUrl;
                 //mNotificationId++;
                 StatusBarNotifications("inform");
 
@@ -781,7 +781,7 @@ public class CoreService extends Service {
                         remote_picture = BitmapFactory.decodeResource(getApplicationContext().getResources(),
                                 R.drawable.redenicon);
                         MessageType = 12;
-                        redUrl = "http://www.maakki.cc/MCoins/MCoinsQuery.aspx";
+                        redUrl = StaticVar.webURL+"/MCoins/MCoinsQuery.aspx";
                         isNotify = sharedPrefs.getBoolean("sponsor_notification", true);
                         //intent = new Intent(getApplicationContext(), PreNotificationList.class);
                     } else {
@@ -832,7 +832,7 @@ public class CoreService extends Service {
                     }
                     break;
                 case "admin_receiver":
-                    redUrl = "http://www.maakki.cc/community/ecard.aspx?mid=" + cMemID;
+                    redUrl = StaticVar.webURL+"/community/ecard.aspx?mid=" + cMemID;
                     nContentTitle = mName + "，系统通知你：";
                     //nMessage=cName+"："+nMessage;
                     if (nMessage.contains("成为BO")) {
@@ -857,7 +857,7 @@ public class CoreService extends Service {
                             nMessage = notifier[2] + nMessage;
                         }
                         if (redUrl.equals("")) {
-                            redUrl = "http://www.maakki.cc/community/NotifyMain.aspx";
+                            redUrl = StaticVar.webURL+"/community/NotifyMain.aspx";
                             MessageType = 4;
 
                         } else if (redUrl.contains("/community/FriendList.aspx?act_type=Invite")) {
@@ -900,7 +900,7 @@ public class CoreService extends Service {
                 case "MGSinform":
                     cpicfile = "00003.jpg";
                     isNotify = sharedPrefs.getBoolean("mgs_notification", true);
-                    redUrl = "http://www.maakki.cc/MGS/MGSMainpage.aspx";
+                    redUrl = StaticVar.webURL+"/MGS/MGSMainpage.aspx";
                     nContentTitle = mName + "，MGS通知你：";
                     MessageType = 6;
                     break;
@@ -925,7 +925,7 @@ public class CoreService extends Service {
                     nMessage = nMessage.split(":")[6];
                 }
                 if (!cpicfile.equals("00003.jpg")) {
-                    pic_url = "http://www.maakki.cc/ashx/showImage.ashx?file_id=" + cpicfile + "&width=40&height=40&forcibly=Y&dimg=Y";
+                    pic_url = StaticVar.webURL+"/ashx/showImage.ashx?file_id=" + cpicfile + "&width=40&height=40&forcibly=Y&dimg=Y";
                     if (MessageType != 12) {
                         try {
                             remote_picture = BitmapFactory.decodeStream(

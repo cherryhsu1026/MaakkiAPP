@@ -84,7 +84,7 @@ public class Ally_buildup extends Activity {
     private List<_IAApplyData> listIAApplyData;
     private double erUSD = 1l, erRMB = 1l, erHKD = 1l, erMYR = 1l, erJPY = 1l, memberFG = 0l, actualSponsorAmt = 0l, iCredit = 0l;
     private String realPath,picFileID, member_id, strCurrency, default_sponsoriCredit, targetStr, target_maakki_id, currency = "RMB";
-    private String redUrl = "http://www.maakki.cc/MCoins/MCoinsQuery.aspx";
+    private String redUrl = "http://www.maakki.com/MCoins/MCoinsQuery.aspx";
     private List<exchangeRate> rateArr;
     //1:指定赞助 2:顺序赞助 3:红包赞助
     private int sponsorType = 1, envelope_no = 1;

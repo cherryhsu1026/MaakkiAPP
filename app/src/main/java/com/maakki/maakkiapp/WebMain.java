@@ -44,7 +44,7 @@ public class WebMain extends AppCompatActivity implements ShareActionProvider.On
     Intent shareIntent;
     ImageView imgview;
     private ShareActionProvider mShareActionProvider;
-    private String redUrl = "http://www.maakki.cc/community/ecard.aspx";
+    private String redUrl = "http://www.maakki.com/community/ecard.aspx";
     //private String mMemID="";
     private String mName = "";
     private ImageLoader imageLoader;
@@ -61,7 +61,7 @@ public class WebMain extends AppCompatActivity implements ShareActionProvider.On
             Bundle bundle = this.getIntent().getExtras();
             redUrl = bundle.getString("redirUrl");
         } else {
-            redUrl = "http://www.maakki.cc/community/NotifyMain.aspx";
+            redUrl = "http://www.maakki.com/community/NotifyMain.aspx";
         }
         args.putString("redUrl", redUrl);
         //args.putString("mMemID", mMemID);
@@ -363,7 +363,7 @@ public class WebMain extends AppCompatActivity implements ShareActionProvider.On
             //Log.i(TAG, "doInBackground");
 
             //imageUrl=SharedPreferencesHelper.getSharedPreferencesString(this, SharedPreferencesHelper.SharedPreferencesKeys.key10, "");
-            imageUrl = "http://www.maakki.cc/ashx/showImage.ashx?width=689&height=689&file_id=E16EDECC-ffafcjiejfGcCiHhjpg13";
+            imageUrl = "http://www.maakki.com/ashx/showImage.ashx?width=689&height=689&file_id=E16EDECC-ffafcjiejfGcCiHhjpg13";
             if (!imageUrl.equals("")) {
                 imageLoader.displayImage(imageUrl, imgview);
             }

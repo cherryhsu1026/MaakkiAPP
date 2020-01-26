@@ -62,7 +62,7 @@ import java.util.List;
  */
 
 public class FriendList extends AppCompatActivity {
-    private String redUrl = "http://www.maakki.cc/community/ecard.aspx";
+    private String redUrl = "http://www.maakki.com/community/ecard.aspx";
     private final String NAMESPACE = "http://www.maakki.com/";
     private final String URL = "http://www.maakki.com/WebService.asmx";
     private ArrayList ignoreList;
@@ -566,7 +566,7 @@ public class FriendList extends AppCompatActivity {
             //holder.image_icon.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.colorTitleText));
             String title = "";
             String mpicfile = f.getPicfilePath();
-            String pic_url = "http://www.maakki.cc/ashx/showImage.ashx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
+            String pic_url = "http://www.maakki.com/ashx/showImage.ashx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
             imageLoader.displayImage(pic_url, holder.image_icon);
             lasttime_ChatToThisOne = f.getLastChatTime();
             int count = chatDAO.getCountByContactIDSinceLastGetin(String.valueOf(f.getMemid()), lasttime_ChatToThisOne);
@@ -830,7 +830,7 @@ public class FriendList extends AppCompatActivity {
 
     private Bitmap DownloadImagetoBitmap(Friend friend) {
         Bitmap remote_picture = null;
-        String pic_url = "http://www.maakki.cc/ashx/showImage.ashx?file_id=" + friend.getPicfilePath() + "&width=40&height=40&forcibly=Y&dimg=Y";
+        String pic_url = "http://www.maakki.com/ashx/showImage.ashx?file_id=" + friend.getPicfilePath() + "&width=40&height=40&forcibly=Y&dimg=Y";
         try {
             remote_picture = BitmapFactory.decodeStream(
                     (InputStream) new URL(pic_url).getContent());
@@ -1367,8 +1367,7 @@ public class FriendList extends AppCompatActivity {
         request.addProperty("getType", getType);
         request.addProperty("timeStamp", timeStamp);
         request.addProperty("identifyStr", identifyStr);
-        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-                SoapEnvelope.VER11);
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         //Set output SOAP object
         envelope.setOutputSoapObject(request);
         envelope.dotNet = true;

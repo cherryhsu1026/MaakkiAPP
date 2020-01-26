@@ -319,7 +319,7 @@ public class PreNotificationList extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), "position:"+position+"/id:"+id, Toast.LENGTH_SHORT).show();
                     //if (swipeDetector.getAction() == SwipeDetector.Action.LR) {
                     Integer mt = p.getmessagetype();
-                    String redUrl = "http://www.maakki.cc/community/ecard.aspx";
+                    String redUrl = StaticVar.webURL+"/community/ecard.aspx";
                     Intent intent = new Intent(PreNotificationList.this, WebMain2.class);
                     Bundle bundle = new Bundle();
                     mMemID = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key1, "");
@@ -357,14 +357,14 @@ public class PreNotificationList extends AppCompatActivity {
                             }
                             break;
                         case 4:
-                            redUrl = "http://www.maakki.cc/community/NotifyMain.aspx";
+                            redUrl = StaticVar.webURL+"/community/NotifyMain.aspx";
                             break;
                         case 5:
                             redUrl = p.gettitle();
                             //Toast.makeText(getApplicationContext(), "redUrl:"+redUrl, Toast.LENGTH_SHORT).show();
                             break;
                         case 6:
-                            redUrl = "http://www.maakki.cc/MGS/MGSMainpage.aspx";
+                            redUrl = StaticVar.webURL+"/MGS/MGSMainpage.aspx";
                         case 7:
                             //点击来自使用者的客服要求通知
                             intent = new Intent(PreNotificationList.this, Chat_CustomerService.class);
@@ -646,7 +646,7 @@ public class PreNotificationList extends AppCompatActivity {
             }
             if (mt == 2|| mt==12) {
                 String mpicfile = p.getPicfile();
-                String pic_url = "http://www.maakki.cc/ashx/showImage.ashx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
+                String pic_url =StaticVar.webURL+"/ashx/showImage.ashx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
                 imageLoader.displayImage(pic_url, holder.image_icon);
             } else if(mt==14){
                 Bitmap bitmap = BitmapFactory.decodeFile(p.getPicfile());

@@ -58,11 +58,11 @@ public class addSponsor extends Activity {
     private EditText et_slogan, et_envelope_no, et_iCredits, et_target, et_password, et_password2, et_phonenumber, et_verificode, et_introducer;
     private boolean isDown, hasChangedtoUSD, isTarget, isAnonymous,isSilent,isFriendlimited, isSpecific, is12, is50, is42, is10, is11, is20, is40, is41, is72338, istoday, isyesterday, isArea, isLocality, isSublocality, isn50, is0, is17142, hasPasswordChecked, hasPhonenumberChecked, hasVericode, hasIntroducerChecked;
     private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = "http://www.maakki.cc/WebServiceIA.asmx";
-    private final String URL_WS = "http://www.maakki.cc/WebService.asmx";
+    private final String URL = "http://www.maakki.com/WebServiceIA.asmx";
+    private final String URL_WS = "http://www.maakki.com/WebService.asmx";
     private List<Friend> listFriend;    private double erUSD = 1l, erRMB = 1l, erHKD = 1l, erMYR = 1l, erJPY = 1l, memberFG = 0l, actualSponsorAmt = 0l, iCredit = 0l;
     private String picFileID, member_id, strCurrency, default_sponsoriCredit, targetStr, target_maakki_id, currency = "RMB";
-    private String redUrl = "http://www.maakki.cc/MCoins/MCoinsQuery.aspx";
+    private String redUrl = "http://www.maakki.com/MCoins/MCoinsQuery.aspx";
     private List<exchangeRate> rateArr;
     //1:指定赞助 2:顺序赞助 3:红包赞助
     private int sponsorType = 1, envelope_no = 1;

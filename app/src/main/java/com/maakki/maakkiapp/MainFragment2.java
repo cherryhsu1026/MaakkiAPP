@@ -49,7 +49,7 @@ public class MainFragment2 extends Fragment {
     ImageView iv_goc, iv_customerservive, iv_errpage;
     RelativeLayout RL_Errpage;
     private WebView mWebView;
-    private String redUrl = "http://www.maakki.cc/community/ecard.aspx";
+    private String redUrl = StaticVar.webURL+"/community/ecard.aspx";
     private String mMaakkiID = "";
     private String mMemID = "";
     private String mName = "";
@@ -94,7 +94,7 @@ public class MainFragment2 extends Fragment {
                     if (keyCode == KeyEvent.KEYCODE_BACK) {  //表示按返回键 时的操作
                         //&& mWebView.canGoBack()
                         //Toast.makeText(getActivity(), "right:"+currentUrl, Toast.LENGTH_LONG).show();
-                        if (currentUrl.contains("maakki.cc/community/ecard.aspx")) {
+                        if (currentUrl.contains(StaticVar.DomainName+"/community/ecard.aspx")) {
                             //ignore the click;
                             //
                         } else {
@@ -131,7 +131,7 @@ public class MainFragment2 extends Fragment {
             @Override
             public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
                 String[] msg = message.split("/");
-                if (url.contains("maakki.cc/community/ecard.aspx")) {
+                if (url.contains(StaticVar.DomainName+"/community/ecard.aspx")) {
                     if (mMemID.equals("")) {
                         mMaakkiID = msg[1];
                         mMemID = msg[2];
@@ -341,7 +341,7 @@ public class MainFragment2 extends Fragment {
             SharedPreferencesHelper.putSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key9, title);
             s = "<img src=\"";
             ix = html.indexOf(s) + s.length();
-            String ImageUrl = "http://www.maakki.cc" + html.substring(ix, html.indexOf("\"", ix + 1));
+            String ImageUrl = StaticVar.webURL + html.substring(ix, html.indexOf("\"", ix + 1));
             //Toast.makeText(getActivity(),ImageUrl,Toast.LENGTH_LONG).show();
             SharedPreferencesHelper.putSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key10, ImageUrl);
         }
@@ -384,7 +384,7 @@ public class MainFragment2 extends Fragment {
 
         @Override
         public void onLoadResource(WebView view, String url) {
-            if (url.contains("maakki.cc/maakki-manual/fileDownload_oncall.aspx")) {
+            if (url.contains(StaticVar.DomainName+"/maakki-manual/fileDownload_oncall.aspx")) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(browserIntent);
             }
@@ -402,7 +402,7 @@ public class MainFragment2 extends Fragment {
                 startActivity(browserIntent);
             }
             //Chat_public
-            if (url.contains("maakki.cc/community/Chat.aspx")) {
+            if (url.contains(StaticVar.DomainName+"/community/Chat.aspx")) {
                 Intent intent = new Intent(getActivity(), Chat_main.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("isPrivate", "");
@@ -411,7 +411,7 @@ public class MainFragment2 extends Fragment {
                 startActivity(intent);
             }
             //Chat_private
-            if (url.contains("maakki.cc/community/chat.aspx?Contact=")) {
+            if (url.contains(StaticVar.DomainName+"/community/chat.aspx?Contact=")) {
                 //Toast.makeText(getActivity(), "url:"+url, Toast.LENGTH_LONG).show();
                 int n = url.indexOf('?');
                 String u = url.substring(n + 1);
@@ -445,7 +445,7 @@ public class MainFragment2 extends Fragment {
                     startActivity(i);
                 }
             }
-            if (url.contains("maakki.cc/logout")) {
+            if (url.contains(StaticVar.DomainName+"/logout")) {
                 mName = SharedPreferencesHelper.getSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key2, "");
                 Toast.makeText(getActivity(), mName + ",bye~", Toast.LENGTH_LONG).show();
                 stopLocalService();
@@ -471,7 +471,7 @@ public class MainFragment2 extends Fragment {
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            if (url.contains("maakki.cc/MCoins/MCoinsQuery.aspx")) {
+            if (url.contains(StaticVar.DomainName+"/MCoins/MCoinsQuery.aspx")) {
                 iv_goc.setVisibility(View.VISIBLE);
                 iv_goc.setOnClickListener(new View.OnClickListener() {
                     //@Override
@@ -484,7 +484,7 @@ public class MainFragment2 extends Fragment {
                 iv_goc.setVisibility(View.INVISIBLE);
             }
             //客服专线图案
-            if (url.contains("maakki.cc/Maakki-manual/")) {
+            if (url.contains(StaticVar.DomainName+"/Maakki-manual/")) {
                 String Contactid = "90";
                 //((WebMain2) getActivity()).getContactLastMessageTime(Contactid);
                 //((WebMain2) getActivity()).PrepareshareIntent(url);
@@ -525,10 +525,10 @@ public class MainFragment2 extends Fragment {
                 iv_customerservive.setVisibility(View.GONE);
             }
             //只要再回到電子名片主頁，就检视getMaakkiAppData()回应的信息
-            if (url.contains("maakki.cc/community/ecard.aspx")) {
+            if (url.contains(StaticVar.DomainName+"/community/ecard.aspx")) {
                 String str = "javascript:alert(getMaakkiAppData10())";
                 view.loadUrl(str);
-            } else if (url.contains("maakki.cc/BOlist.aspx") || url.contains("maakki.cc/BOStoreData.aspx")) {
+            } else if (url.contains(StaticVar.DomainName+"/BOlist.aspx") || url.contains(StaticVar.DomainName+"/BOStoreData.aspx")) {
                 String lat = SharedPreferencesHelper.getSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key7, "0");
                 String lon = SharedPreferencesHelper.getSharedPreferencesString(getActivity(), SharedPreferencesHelper.SharedPreferencesKeys.key8, "0");
                 if (!lat.equals("0")) {
@@ -538,7 +538,7 @@ public class MainFragment2 extends Fragment {
             }
             view.loadUrl("javascript:window.HTMLOUT.getHtml('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
             /*imageUrl=SharedPreferencesHelper.getSharedPreferencesString(this, SharedPreferencesHelper.SharedPreferencesKeys.key10, "");
-            imageUrl="http://www.maakki.cc/ashx/showImage.ashx?width=689&height=689&file_id=E16EDECC-ffafcjiejfGcCiHhjpg13";
+            imageUrl=StaticVar.webURL+"/ashx/showImage.ashx?width=689&height=689&file_id=E16EDECC-ffafcjiejfGcCiHhjpg13";
             if(!imageUrl.equals("")){
                 imageLoader.displayImage(imageUrl, imgview);
             }*/

@@ -256,7 +256,7 @@ public class DefaultService extends Service {
                         cName = "";
                         //NotifySender = String.valueOf(mid)+"/"+storename+"/"+smid[2];
                         NotifySender = String.valueOf(mid) + "/" + storename + "/00003.jpg";
-                        redUrl = "http://www.maakki.cc/BOStoreData.aspx?entrepot_id=" + String.valueOf(sid) + "&mid=" + mMaakkiID;
+                        redUrl = StaticVar.webURL+"/BOStoreData.aspx?entrepot_id=" + String.valueOf(sid) + "&mid=" + mMaakkiID;
                         mNotificationId++;
                         StatusBarNotifications("inform");
                     }
@@ -340,7 +340,7 @@ public class DefaultService extends Service {
                 cName = "";
                 //String msgType = msg[0];
                 NotifySender = sender;
-                redUrl = "http://www.maakki.cc/" + notifyUrl;
+                redUrl = StaticVar.webURL+"/" + notifyUrl;
                 mNotificationId++;
                 StatusBarNotifications("inform");
 
@@ -544,7 +544,7 @@ public class DefaultService extends Service {
 
                     break;
                 case "admin_receiver":
-                    redUrl = "http://www.maakki.cc/community/ecard.aspx?mid=" + cMemID;
+                    redUrl = StaticVar.webURL+"/community/ecard.aspx?mid=" + cMemID;
                     nContentTitle = mName + "，系统通知你：";
                     //nMessage=cName+"："+nMessage;
                     if (nMessage.contains("成为IA")) {
@@ -569,7 +569,7 @@ public class DefaultService extends Service {
                             nMessage = notifier[2] + nMessage;
                         }
                         if (redUrl.equals("")) {
-                            redUrl = "http://www.maakki.cc/community/NotifyMain.aspx";
+                            redUrl = StaticVar.webURL+"/community/NotifyMain.aspx";
                             MessageType = 4;
                         } else {
                             messagetitle = redUrl;
@@ -583,7 +583,7 @@ public class DefaultService extends Service {
                     break;
                 case "MGSinform":
                     isNotify = sharedPrefs.getBoolean("mgs_notification", true);
-                    redUrl = "http://www.maakki.cc/MGS/MGSMainpage.aspx";
+                    redUrl = StaticVar.webURL+"/MGS/MGSMainpage.aspx";
                     nContentTitle = mName + "，MGS通知你：";
                     /*if(nMessage.contains("挂买")){
                         remote_picture = BitmapFactory. decodeResource(getApplicationContext().getResources(),
