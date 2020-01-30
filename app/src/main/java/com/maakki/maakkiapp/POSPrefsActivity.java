@@ -52,8 +52,8 @@ import java.util.Date;
 public class POSPrefsActivity extends PreferenceActivity {
     private static String appVersion;
     private static String BOCurrency, StoreName, Discount, isPercent, MR, errMsg;
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     private Preference pfMR;
     private Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
@@ -274,7 +274,7 @@ public class POSPrefsActivity extends PreferenceActivity {
     private void getWebService_setBOData() {
         //Create request(int bo_id, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "setBOData";
-        String SOAP_ACTION = "http://www.maakki.com/setBOData";
+        String SOAP_ACTION = StaticVar.namespace+"setBOData";
         //String METHOD_NAME = "getOnlineList";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String bo_maakkiid = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "");

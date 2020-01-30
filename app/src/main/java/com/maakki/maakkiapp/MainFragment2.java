@@ -49,7 +49,7 @@ public class MainFragment2 extends Fragment {
     ImageView iv_goc, iv_customerservive, iv_errpage;
     RelativeLayout RL_Errpage;
     private WebView mWebView;
-    private String redUrl = StaticVar.webURL+"/community/ecard.aspx";
+    private String redUrl = StaticVar.webURL+"community/ecard.aspx";
     private String mMaakkiID = "";
     private String mMemID = "";
     private String mName = "";

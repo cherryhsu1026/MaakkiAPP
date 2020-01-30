@@ -34,7 +34,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class WebMain extends AppCompatActivity implements ShareActionProvider.OnShareTargetSelectedListener {
 
-    //private String shareUrl = "http://www.maakki.cc/";
+    //private String shareUrl = StaticVar.webURL;
     private static final String TAG = WebMain.class.getSimpleName();
     private static final int REQUEST_CODE_QR_SCAN = 101;
     //MainFragment mf = new MainFragment();
@@ -44,7 +44,7 @@ public class WebMain extends AppCompatActivity implements ShareActionProvider.On
     Intent shareIntent;
     ImageView imgview;
     private ShareActionProvider mShareActionProvider;
-    private String redUrl = StaticVar.webURL+"/community/ecard.aspx";
+    private String redUrl = StaticVar.webURL+"community/ecard.aspx";
     //private String mMemID="";
     private String mName = "";
     private ImageLoader imageLoader;
@@ -61,7 +61,7 @@ public class WebMain extends AppCompatActivity implements ShareActionProvider.On
             Bundle bundle = this.getIntent().getExtras();
             redUrl = bundle.getString("redirUrl");
         } else {
-            redUrl = StaticVar.webURL+"/community/NotifyMain.aspx";
+            redUrl = StaticVar.webURL+"community/NotifyMain.aspx";
         }
         args.putString("redUrl", redUrl);
         //args.putString("mMemID", mMemID);

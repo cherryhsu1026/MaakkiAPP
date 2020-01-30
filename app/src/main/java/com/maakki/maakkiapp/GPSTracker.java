@@ -33,7 +33,7 @@ import microsoft.aspnet.signalr.client.transport.ServerSentEventsTransport;
 
 public class GPSTracker extends Service implements LocationListener {
     private static final String HUB_chat_private_Send = "chatSend";
-    private static final String HUB_URL =StaticVar.webURL+ "/";
+    private static final String HUB_URL =StaticVar.webURL;
     private static final String HUB_NAME = "maakkiHub";
     private static final String HUB_Method_Connection = "userConnected";
     private HubProxy mHub;

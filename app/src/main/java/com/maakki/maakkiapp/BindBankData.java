@@ -29,8 +29,8 @@ import java.security.MessageDigest;
 import java.util.Date;
 
 public class BindBankData extends Activity {
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     private static String role, strBank_name, strBranch_name, strAccount_name, strAccount_no;
     private static String errMsg, errCode, maakki_id, timeStamp, identifyStr;
     private EditText et_bank_name, et_branch_name, et_account_no, et_account_name;
@@ -253,7 +253,7 @@ public class BindBankData extends Activity {
 
     private void getWebService_bindBank() {
         String METHOD_NAME = "bindBank";
-        String SOAP_ACTION = StaticVar.webURL+"/bindBank";
+        String SOAP_ACTION = StaticVar.namespace+"bindBank";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + role + et_account_no.getText().toString().trim();
@@ -467,7 +467,7 @@ public class BindBankData extends Activity {
 
     private void getWebService_getBankData(String role) {
         String METHOD_NAME = "getBankData";
-        String SOAP_ACTION = "http://www.maakki.com/getBankData";
+        String SOAP_ACTION = StaticVar.namespace+"getBankData";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + role;
@@ -560,7 +560,7 @@ public class BindBankData extends Activity {
 
     private void deleteBankData() {
         String METHOD_NAME = "deleteBankData";
-        String SOAP_ACTION = "http://www.maakki.com/deleteBankData";
+        String SOAP_ACTION = StaticVar.namespace+"deleteBankData";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim();

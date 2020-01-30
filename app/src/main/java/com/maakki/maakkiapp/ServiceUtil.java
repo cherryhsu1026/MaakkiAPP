@@ -33,9 +33,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ServiceUtil {
-    private static String NAMESPACE = "http://www.maakki.com/";
-    private static String URL = StaticVar.webURL+"/WebServiceIA.asmx";
-    private static String URL_WS = StaticVar.webURL+"/WebService.asmx";
+    private static String NAMESPACE = StaticVar.namespace;
+    private static String URL = StaticVar.webURL+"WebServiceIA.asmx";
+    private static String URL_WS = StaticVar.webURL+"WebService.asmx";
     static String errMsg,errCode;
     public static boolean isServiceRunning(Context context, String serviceName) {
         boolean isServiceRunning = false;
@@ -80,7 +80,7 @@ public class ServiceUtil {
 
     public static void MDFSponsor(Context context,String maakki_id,String target_id,String cMemID,String sponsorAmt,String iCreditPassword,String isUSD,String isAnonymous) {
         String METHOD_NAME = "MDFSponsor";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id + "MDF-M@@kki.cc" + timeStamp.trim() + target_id + sponsorAmt + iCreditPassword;

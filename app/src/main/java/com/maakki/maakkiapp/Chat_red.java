@@ -50,11 +50,11 @@ import microsoft.aspnet.signalr.client.transport.ServerSentEventsTransport;
 //import com.codebutler.android_websockets.WebSocketClient;
 
 public class Chat_red extends AppCompatActivity {
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
     //private Toolbar toolbar;
-    private static final String HUB_URL = StaticVar.webURL+"/";
+    private static final String HUB_URL = StaticVar.webURL;
     private static final String HUB_NAME = "maakkiHub";
     private static final String HUB_Method_Connection = "userConnected";
     //private static final String HUB_chat_public_Send="chat_public";
@@ -427,7 +427,7 @@ public class Chat_red extends AppCompatActivity {
         //Create request
         //getNickname(int id, bool isMaakkiID)
         String METHOD_NAME = "getNickname";
-        String SOAP_ACTION = "http://www.maakki.com/getNickname";
+        String SOAP_ACTION = StaticVar.namespace+"getNickname";
         //String METHOD_NAME = "getOnlineList";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String bo_maakkiid = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "");
@@ -536,7 +536,7 @@ public class Chat_red extends AppCompatActivity {
     public void friendAction(String actType, String friend_id) {
         //Create
         String METHOD_NAME = "friendAction";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String MemID = SharedPreferencesHelper.getSharedPreferencesString(context, SharedPreferencesHelper.SharedPreferencesKeys.key1, "");
         String timeStamp = String.valueOf(new Date().getTime());

@@ -51,8 +51,8 @@ import java.util.Date;
 public class _imaimai_PrefsActivity extends PreferenceActivity {
     private static String strBank_name, strBranch_name, strAccount_name, strAccount_no;
     private static String errMsg, errCode, maakki_id, timeStamp, identifyStr;
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     private SharedPreferences.Editor prefs;
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
     String role, maakki_id_account;
@@ -267,7 +267,7 @@ public class _imaimai_PrefsActivity extends PreferenceActivity {
 
     private void getWebService_bindBank() {
         String METHOD_NAME = "bindBank";
-        String SOAP_ACTION = StaticVar.webURL+"/bindBank";
+        String SOAP_ACTION = StaticVar.namespace+"bindBank";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + role + strAccount_no;
@@ -456,7 +456,7 @@ public class _imaimai_PrefsActivity extends PreferenceActivity {
 
     private void getWebService_getBankData(String role) {
         String METHOD_NAME = "getBankData";
-        String SOAP_ACTION = StaticVar.webURL+"/getBankData";
+        String SOAP_ACTION = StaticVar.namespace+"getBankData";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + role;

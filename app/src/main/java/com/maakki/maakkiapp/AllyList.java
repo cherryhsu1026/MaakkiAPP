@@ -45,8 +45,8 @@ import java.util.List;
  */
 
 public class AllyList extends AppCompatActivity {
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE =StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     //RelativeLayout newitem;
     ListView listview;
     Button btn, btn_online;

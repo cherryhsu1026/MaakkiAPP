@@ -26,8 +26,8 @@ import java.util.Date;
 
 public class GOCMain extends Activity {
 
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     private ImageView imgLogo;
     private TextView tv_question, tv_slogan, tv_goc, tv_content1, tv_content2, tv_content3, tv_gain, tv_30, tv_60, tv_90, tv_15, tv_url;
     private ImageView ivBack;
@@ -260,7 +260,7 @@ public class GOCMain extends Activity {
     private void getWebService_iCreditGOC() {
         //Create request
         String METHOD_NAME = "iCreditGOC";
-        String SOAP_ACTION = "http://www.maakki.com/iCreditGOC";
+        String SOAP_ACTION = StaticVar.namespace+"iCreditGOC";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         maakki_id = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "");
         //iCreditGOC(int maakki_id, int days, Int64 timeStamp, String identifyStr)

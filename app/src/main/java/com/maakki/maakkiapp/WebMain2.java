@@ -2,33 +2,36 @@ package com.maakki.maakkiapp;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 
-import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 import me.leolin.shortcutbadger.ShortcutBadger;
-import microsoft.aspnet.signalr.client.SignalRFuture;
-import microsoft.aspnet.signalr.client.hubs.HubConnection;
-import microsoft.aspnet.signalr.client.hubs.HubProxy;
-import microsoft.aspnet.signalr.client.transport.ServerSentEventsTransport;
 
 
 /**
@@ -39,7 +42,7 @@ public class WebMain2 extends AppCompatActivity implements ShareActionProvider.O
     private static final int REQUEST_CODE_QR_SCAN = 101;
     Bundle args = new Bundle();
     Context context;
-    private String redUrl = StaticVar.webURL+"/community/ecard.aspx";
+    private String redUrl = StaticVar.webURL+"community/ecard.aspx";
     //float scrollp=0;
     int yPos=0;
     private ShareActionProvider mShareActionProvider;
@@ -54,7 +57,7 @@ public class WebMain2 extends AppCompatActivity implements ShareActionProvider.O
             redUrl = bundle.getString("redirUrl");
             yPos = bundle.getInt("yPos");
         } else {
-            redUrl = StaticVar.webURL+"/community/NotifyMain.aspx";
+            redUrl = StaticVar.webURL+"community/NotifyMain.aspx";
         }
         //MainFragment2 mf = new MainFragment2();
         CoreFragment mf = new CoreFragment();
@@ -85,6 +88,7 @@ public class WebMain2 extends AppCompatActivity implements ShareActionProvider.O
     protected void onStart() {
         super.onStart();
         ShortcutBadger.with(getApplicationContext()).remove();
+        new CheckNotice().execute("1");
         /*Boolean isServiceOn = SharedPreferencesHelper.getSharedPreferencesBoolean(context, SharedPreferencesHelper.SharedPreferencesKeys.key4, false);
         if (isServiceOn) {
             if (!ServiceUtil.isServiceRunning(context, CORE_SERVICE)) {
@@ -92,7 +96,60 @@ public class WebMain2 extends AppCompatActivity implements ShareActionProvider.O
             }
         }*/
         //Toast.makeText(getApplicationContext(), "order_id:"+order_id+"\nlistOrderDetail.size():"+listOrderDetail.size(), Toast.LENGTH_LONG).show();
-    }/**/
+    }
+
+    public class CheckNotice extends AsyncTask<String, Integer, String> {
+
+        @Override
+        protected String doInBackground(String... strings) {
+            HashMap<String, String> map = new HashMap<String, String>();
+            String result = Utils.callWebService(StaticVar.webURL + "webService.asmx", StaticVar.webURL, "getNotice", map);
+            return result;
+        }
+
+        protected void onPostExecute(String result) {
+            JSONObject json_read = null;
+            Log.e("cherry", "get notice result:" + result);
+            try {
+                json_read = new JSONObject(result);
+                String errCode = json_read.getString("errCode");
+                Log.e("Cherry", "errCode:" + errCode);
+                String msg = json_read.getString("notice");
+                String notice_id = json_read.getString("notice_id").trim();
+                //SharedPreferencesHelper.putSharedPreferencesString(context, StaticVar.SPKey110, "");
+                String noticeRead = ";" + SharedPreferencesHelper.getSharedPreferencesString(context, StaticVar.SPKey110, "");
+                if (errCode.equals("1") && !noticeRead.contains(";" + notice_id + ";")) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+                    LayoutInflater inflater = WebMain2.this.getLayoutInflater();
+                    View view = inflater.inflate(R.layout.download_newapk_dialog, null);
+                    TextView tv_title = view.findViewById(R.id.tv_title);
+                    tv_title.setText("通知");
+                    TextView tv_message = view.findViewById(R.id.tv_message);
+                    tv_message.setText(msg);
+                    CheckBox cb = (CheckBox) view.findViewById(R.id.check_box);
+                    cb.setVisibility(View.VISIBLE);
+                    alertDialog.setView(view);
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                            (dialog, which) -> {
+                                //如果使用者點選不再顯示，則紀錄在Local storage 裡，以供之後判斷用
+                                if (cb.isChecked())
+                                    SharedPreferencesHelper.putSharedPreferencesString(context, StaticVar.SPKey110, noticeRead + notice_id + ";");
+                                dialog.dismiss();
+                                //registrationDialog();
+                            });
+                    alertDialog.show();
+
+                } else {
+
+                }
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
 
     @Override
     public boolean onShareTargetSelected(ShareActionProvider source, Intent intent) {

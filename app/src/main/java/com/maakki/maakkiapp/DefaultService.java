@@ -43,7 +43,7 @@ import microsoft.aspnet.signalr.client.transport.ServerSentEventsTransport;
  * Created by ryan on 2016/2/26.
  */
 public class DefaultService extends Service {
-    private static final String HUB_URL =StaticVar.webURL+ "/";
+    private static final String HUB_URL =StaticVar.webURL;
     private static final String HUB_NAME = "maakkiHub";
     private static final String HUB_Method_DisConnection = "userDisConnected";
     private static final String HUB_AsyncStoreData = "AsyncStoreData";
@@ -256,7 +256,7 @@ public class DefaultService extends Service {
                         cName = "";
                         //NotifySender = String.valueOf(mid)+"/"+storename+"/"+smid[2];
                         NotifySender = String.valueOf(mid) + "/" + storename + "/00003.jpg";
-                        redUrl = StaticVar.webURL+"/BOStoreData.aspx?entrepot_id=" + String.valueOf(sid) + "&mid=" + mMaakkiID;
+                        redUrl = StaticVar.webURL+"BOStoreData.aspx?entrepot_id=" + String.valueOf(sid) + "&mid=" + mMaakkiID;
                         mNotificationId++;
                         StatusBarNotifications("inform");
                     }
@@ -340,7 +340,7 @@ public class DefaultService extends Service {
                 cName = "";
                 //String msgType = msg[0];
                 NotifySender = sender;
-                redUrl = StaticVar.webURL+"/" + notifyUrl;
+                redUrl = StaticVar.webURL+notifyUrl;
                 mNotificationId++;
                 StatusBarNotifications("inform");
 
@@ -484,7 +484,7 @@ public class DefaultService extends Service {
             String nContentTitle = "";
             Integer MessageType = 0;
 
-            String pic_url = StaticVar.webURL+"/image/icon.png";
+            String pic_url = StaticVar.webURL+"image/icon.png";
             Intent intent = new Intent(getApplicationContext(), WebMain.class);
             Bundle bundle = new Bundle();
             bundle.putString("mName", mName);
@@ -544,7 +544,7 @@ public class DefaultService extends Service {
 
                     break;
                 case "admin_receiver":
-                    redUrl = StaticVar.webURL+"/community/ecard.aspx?mid=" + cMemID;
+                    redUrl = StaticVar.webURL+"community/ecard.aspx?mid=" + cMemID;
                     nContentTitle = mName + "，系统通知你：";
                     //nMessage=cName+"："+nMessage;
                     if (nMessage.contains("成为IA")) {
@@ -569,7 +569,7 @@ public class DefaultService extends Service {
                             nMessage = notifier[2] + nMessage;
                         }
                         if (redUrl.equals("")) {
-                            redUrl = StaticVar.webURL+"/community/NotifyMain.aspx";
+                            redUrl = StaticVar.webURL+"community/NotifyMain.aspx";
                             MessageType = 4;
                         } else {
                             messagetitle = redUrl;
@@ -583,7 +583,7 @@ public class DefaultService extends Service {
                     break;
                 case "MGSinform":
                     isNotify = sharedPrefs.getBoolean("mgs_notification", true);
-                    redUrl = StaticVar.webURL+"/MGS/MGSMainpage.aspx";
+                    redUrl = StaticVar.webURL+"MGS/MGSMainpage.aspx";
                     nContentTitle = mName + "，MGS通知你：";
                     /*if(nMessage.contains("挂买")){
                         remote_picture = BitmapFactory. decodeResource(getApplicationContext().getResources(),
@@ -603,7 +603,7 @@ public class DefaultService extends Service {
 
             //remote_picture = BitmapFactory. decodeResource(this.getResources(),R.drawable.logo_s);
             if (!cpicfile.equals("00003.jpg")) {
-                pic_url =StaticVar.webURL+ "/function/getImage.aspx?file_id=" + cpicfile + "&width=60&height=60&forcibly=Y&dimg=Y";
+                pic_url =StaticVar.webURL+ "function/getImage.aspx?file_id=" + cpicfile + "&width=60&height=60&forcibly=Y&dimg=Y";
                 //new DownloadBitmapTask(remote_picture)
                 //        .execute(pic_url);
                 try {

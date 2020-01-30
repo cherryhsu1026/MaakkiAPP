@@ -264,7 +264,7 @@ public class StoreList extends AppCompatActivity {
                     String mid = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "22545");
                     //String redUrl = StaticVar.webURL+"/community/ecard.aspx";
                     Integer sid = s.getStoreID();
-                    String redUrl = StaticVar.webURL+"/BOStoreData.aspx?entrepot_id=" + sid.toString() + "&mid=" + mid;
+                    String redUrl = StaticVar.webURL+"BOStoreData.aspx?entrepot_id=" + sid.toString() + "&mid=" + mid;
                     //Toast.makeText(getApplicationContext(), "redUri="+redUrl, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(StoreList.this, WebMain2.class);
                     Bundle bundle = new Bundle();
@@ -436,7 +436,7 @@ public class StoreList extends AppCompatActivity {
             }
             holder = (ViewHolder) view.getTag();
             String mpicfile = s.getPicfile();
-            String pic_url = StaticVar.webURL+"/function/getImage.aspx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
+            String pic_url = StaticVar.webURL+"function/getImage.aspx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
             imageLoader.displayImage(pic_url, holder.image_icon);
             holder.text_storename.setText(s.getStoreName());
             holder.text_address.setText(s.getAddress());

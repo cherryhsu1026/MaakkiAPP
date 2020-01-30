@@ -24,9 +24,9 @@ import java.util.List;
  * Created by ryan on 2016/8/16.
  */
 public class FriendlistActivity extends AppCompatActivity {
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+ "/WebService.asmx";
-    private final String SOAP_ACTION =  StaticVar.webURL+"/getOnlineList";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+ "WebService.asmx";
+    private final String SOAP_ACTION =  StaticVar.namespace+"getOnlineList";
     private final String METHOD_NAME = "getOnlineList";
     //private static String fahren;
     //TextView tv;
@@ -68,7 +68,7 @@ public class FriendlistActivity extends AppCompatActivity {
 
 
     public void goFriendlist() {
-        String redUrl = StaticVar.webURL+"/community/Friendlist.aspx?act_type=Invite";
+        String redUrl = StaticVar.webURL+"community/Friendlist.aspx?act_type=Invite";
         //Toast.makeText(getApplicationContext(), "redUri="+redUrl, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(FriendlistActivity.this, WebMain2.class);
         Bundle bundle = new Bundle();

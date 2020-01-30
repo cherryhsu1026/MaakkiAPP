@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class NetworkChangeReceiver extends BroadcastReceiver {
     //private boolean isServiceOn=false;
-    private String redUrl = StaticVar.webURL+"/community/ecard.aspx";
+    private String redUrl = StaticVar.webURL+"community/ecard.aspx";
     Context context;
     //CoreAlarm alarm = new CoreAlarm();
     CoreFragment cf=new CoreFragment();

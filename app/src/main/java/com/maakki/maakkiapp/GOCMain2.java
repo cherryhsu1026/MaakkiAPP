@@ -40,8 +40,8 @@ import java.util.Date;
 
 public class GOCMain2 extends Activity {
 
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     Scene mAScene, mAnotherScene;
     ViewGroup mSceneRoot;
     Transition mATransition;
@@ -150,7 +150,7 @@ public class GOCMain2 extends Activity {
 
             @Override
             public void onClick(View v) {
-                String redUrl = StaticVar.webURL+"/MCoins/MCoinsQuery.aspx";
+                String redUrl = StaticVar.webURL+"MCoins/MCoinsQuery.aspx";
                 Intent intent = new Intent(GOCMain2.this, WebMain2.class);
                 intent.putExtra("redirUrl", redUrl);
                 startActivity(intent);
@@ -304,7 +304,7 @@ public class GOCMain2 extends Activity {
     private void getWebService_iCreditGOC() {
         //Create request
         String METHOD_NAME = "iCreditGOC";
-        String SOAP_ACTION = "http://www.maakki.com/iCreditGOC";
+        String SOAP_ACTION = StaticVar.namespace+"iCreditGOC";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         maakki_id = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "");
         //iCreditGOC(int maakki_id, int days, Int64 timeStamp, String identifyStr)

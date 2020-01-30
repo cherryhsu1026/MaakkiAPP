@@ -48,8 +48,8 @@ import java.util.List;
  */
 
 public class GetRemitList extends AppCompatActivity {
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     Toolbar myToolbar;
     RelativeLayout RL,RL_condition_day;
     ListView listview;
@@ -759,7 +759,7 @@ public class GetRemitList extends AppCompatActivity {
     private void getLocationRanking() {
         //Create request
         String METHOD_NAME = "getLocationRanking";
-        String SOAP_ACTION = "http://www.maakki.com/getLocationRanking";
+        String SOAP_ACTION = StaticVar.namespace+"getLocationRanking";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim();
@@ -860,7 +860,7 @@ public class GetRemitList extends AppCompatActivity {
     private void getRemitList() {
         //Create request
         String METHOD_NAME = "getRemitList";
-        String SOAP_ACTION = "http://www.maakki.com/getRemitList";
+        String SOAP_ACTION = StaticVar.namespace+"getRemitList";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + role + bonus_date;
@@ -997,7 +997,7 @@ public class GetRemitList extends AppCompatActivity {
     private void queryCBonus() {
         //Create request
         String METHOD_NAME = "queryCBonus";
-        String SOAP_ACTION = "http://www.maakki.com/queryCBonus";
+        String SOAP_ACTION = StaticVar.namespace+"queryCBonus";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + bonus_date;
@@ -1104,7 +1104,7 @@ public class GetRemitList extends AppCompatActivity {
     private void systemRemitCBonus(String bonus_date, String remit_type, String receiver_id) {
         //Create request
         String METHOD_NAME = "systemRemitCBonus";
-        String SOAP_ACTION = "http://www.maakki.com/systemRemitCBonus";
+        String SOAP_ACTION = StaticVar.namespace+"systemRemitCBonus";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + bonus_date + remit_type + receiver_id;
@@ -1196,7 +1196,7 @@ public class GetRemitList extends AppCompatActivity {
         this.receiver_id = receiver_id;
         this.bonus_date = bonus_date;
         String METHOD_NAME = "cashierRemitCBonus";
-        String SOAP_ACTION = "http://www.maakki.com/cashierRemitCBonus";
+        String SOAP_ACTION = StaticVar.namespace+"cashierRemitCBonus";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + bonus_date + receiver_id;

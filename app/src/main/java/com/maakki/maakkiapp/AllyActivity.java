@@ -68,13 +68,13 @@ public class AllyActivity extends Activity {
             tv_selected_no, tv_area, tv_locality, tv_sublocality, tv_cashin_cashier, tv_confirm_order_admin, tv_orderno, tv_RemittanceTime, tv_RemittanceTime_Cashier, tv_cancel, tv_cancel_cashier, tv_cancel_admin, tv_RemittanceInfo, tv_report, tv_report_cashier, tv_BankInfo, tv_NextStepTime, tv_NextStep, tv_location, tv_result, tv_getVerificode;
     private EditText et_envelope_no, et_iCredits,et_phonenumber, et_verificode, et_introducer;
     private boolean isDown, hasChangedtoUSD, isTarget, isAnonymous,isBuildupbyic, isSpecific, is12, is50, is42, is10, is11, is20, is40, is41, is72338, istoday, isyesterday, isArea, isLocality, isSublocality, isn50, is0, is17142, hasPasswordChecked, hasPhonenumberChecked, hasVericode, hasIntroducerChecked;
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebServiceIA.asmx";
-    private final String URL_WS = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebServiceIA.asmx";
+    private final String URL_WS = StaticVar.webURL+"WebService.asmx";
     private List<_IAApplyData> listIAApplyData;
     private double erUSD = 1l, erRMB = 1l, erHKD = 1l, erMYR = 1l, erJPY = 1l, memberFG = 0l, actualSponsorAmt = 0l, iCredit = 0l;
     private String realPath,picFileID, member_id, strCurrency, default_sponsoriCredit, targetStr, target_maakki_id, currency = "RMB";
-    private String redUrl = StaticVar.webURL+"/MCoins/MCoinsQuery.aspx";
+    private String redUrl = StaticVar.webURL+"MCoins/MCoinsQuery.aspx";
     private List<exchangeRate> rateArr;
     //1:指定赞助 2:顺序赞助 3:红包赞助
     //private int sponsorType = 1, envelope_no = 1;
@@ -230,7 +230,7 @@ public class AllyActivity extends Activity {
     private void getMemberFG() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getMemberFG";
-        String SOAP_ACTION = StaticVar.webURL+"/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "MDF-M@@kki.cc" + timeStamp.trim();
@@ -336,7 +336,7 @@ public class AllyActivity extends Activity {
     private void getMemberProfile() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getMemberProfile";
-        String SOAP_ACTION = StaticVar.webURL+"/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id + "MDF-M@@kki.cc" + timeStamp.trim();
@@ -418,7 +418,7 @@ public class AllyActivity extends Activity {
     private void getiCreditBalance() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getiCreditBalance";
-        String SOAP_ACTION =  StaticVar.webURL+"/" + METHOD_NAME;
+        String SOAP_ACTION =  StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim();
@@ -500,7 +500,7 @@ public class AllyActivity extends Activity {
     private void getExchangeRate() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getExchangeRate";
-        String SOAP_ACTION = StaticVar.webURL+"/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);

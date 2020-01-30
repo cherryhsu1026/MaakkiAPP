@@ -67,7 +67,7 @@ public class CoreFragment extends Fragment {
     private int yPos = 0;
     float scrollp;
     private WebView mWebView;
-    private String redUrl = StaticVar.webURL+"/community/ecard.aspx";
+    private String redUrl = StaticVar.webURL+"community/ecard.aspx";
     private String mMaakkiID = "", errMsg = "", identity = "";
     private String mMemID = "";
     private String mName = "";
@@ -720,10 +720,10 @@ public class CoreFragment extends Fragment {
     }
 
     private void getIdentity() {
-        String NAMESPACE = "http://www.maakki.com/";
-        String URL =StaticVar.webURL+ "/WebService.asmx";
+        String NAMESPACE = StaticVar.namespace;
+        String URL =StaticVar.webURL+ "WebService.asmx";
         String METHOD_NAME = "getIdentity";
-        String SOAP_ACTION = StaticVar.webURL+"/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         String timeStamp = String.valueOf(new Date().getTime());
         String identifyStr = getHashCode(mMaakkiID + "M@@kki.cc" + timeStamp.trim()).toUpperCase();
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -801,10 +801,10 @@ public class CoreFragment extends Fragment {
     }
 
     private void validIAReferral() {
-        String NAMESPACE = "http://www.maakki.com/";
-        final String URL = StaticVar.webURL+"/WebServiceIA.asmx";
+        String NAMESPACE =StaticVar.namespace;
+        final String URL = StaticVar.webURL+"WebServiceIA.asmx";
         String METHOD_NAME = "validIAReferral";
-        String SOAP_ACTION = StaticVar.webURL+"/validIAReferral";
+        String SOAP_ACTION = StaticVar.namespace+"validIAReferral";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         request.addProperty("maakki_id", mMaakkiID);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(

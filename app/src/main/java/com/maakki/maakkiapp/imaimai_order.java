@@ -54,9 +54,9 @@ public class imaimai_order extends Activity {
     //private SharedPreferences sharedPrefs;
     private SharedPreferences.Editor prefs;
     private Thread coreThread = null;
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
-    private final String URL_IA = StaticVar.webURL+"/WebServiceIA.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
+    private final String URL_IA = StaticVar.webURL+"WebServiceIA.asmx";
     private TextView tv_13, tv_area, tv_locality, tv_sublocality, tv_n50, tv_0, tv_17142, tv_72338, tv_NextStepTime, tv_today, tv_yesterday, tv_RemittanceTime_Cashier, tv_RemittanceTime, tv_cashin_cashier, tv_refund_admin, tv_cancel_cashier, tv_report_cashier, tv_confirm_order_admin, tv_confirm_cashout_admin, tv_cancel_admin, tv_BankInfo, tv_errMsg, tv_location;
     private ImageView ivSetup, ivImaimai, ivIdentity, ivQuestion, ivAdmin, ivCashier, iv_right, iv_left, ivList, imgLogo, ivBack, imgLogo_imaimai;
     private TextView tv_selected_amount, tv_selected_no, tv_refund_imaimai, tv_20, tv_50, tv_11, tv_12, tv_42, tv_41, tv_40, tv_10, tv_RemittanceInfo, tv_confirm_report_cashier, tv_cancel_report_cashier, tv_refund_cashier, tv_confirm_report, tv_cancel_report, tv_refund, tv_cancel, tv_report, tv_NextStep, tv_Exclamation, tv_ordertime, tv_orderno, tv_next, tv_content1, tv_content2, tv_content3, tv_content4, tv_content5, tv_ordermain, tv_1, tv_2, tv_3, tv_4, tv_icreditsrecallrate;
@@ -607,7 +607,7 @@ public class imaimai_order extends Activity {
 
     private void getPersonalBalance() {
         String METHOD_NAME = "get920PersonalBalance";
-        String SOAP_ACTION = "http://www.maakki.com/get920PersonalBalance";
+        String SOAP_ACTION = StaticVar.namespace+"get920PersonalBalance";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         request.addProperty("maakki_id", maakki_id);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
@@ -688,7 +688,7 @@ public class imaimai_order extends Activity {
     private void getWebService_get920Balance() {
         //Create request
         String METHOD_NAME = "get920Balance";
-        String SOAP_ACTION = "http://www.maakki.com/get920Balance";
+        String SOAP_ACTION = StaticVar.namespace+"get920Balance";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);
@@ -759,7 +759,7 @@ public class imaimai_order extends Activity {
 
     private void getWebService_order_imaimai() {
         String METHOD_NAME = "_920Trade";
-        String SOAP_ACTION = "http://www.maakki.com/_920Trade";
+        String SOAP_ACTION = StaticVar.namespace+"_920Trade";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.toString().trim() + "M@@kki.cc" + timeStamp.toString().trim() + String.valueOf(amount).trim();
@@ -904,7 +904,7 @@ public class imaimai_order extends Activity {
 
     private void getWebService_get920TradeInfo(String role, String act, int tradeid) {
         String METHOD_NAME = "get920TradeInfo";
-        String SOAP_ACTION = "http://www.maakki.com/get920TradeInfo";
+        String SOAP_ACTION = StaticVar.namespace+"get920TradeInfo";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id + "M@@kki.cc" + timeStamp + String.valueOf(tradeid).trim() + act + role;
@@ -1963,7 +1963,7 @@ public class imaimai_order extends Activity {
 
     private void getWebService_920remittanceUpdate() {
         String METHOD_NAME = "_920remittanceUpdate";
-        String SOAP_ACTION = "http://www.maakki.com/_920remittanceUpdate";
+        String SOAP_ACTION = StaticVar.namespace+"_920remittanceUpdate";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.toString().trim() + "M@@kki.cc" + timeStamp.toString().trim() + String.valueOf(tradeID).trim() + ed_text_ra;
@@ -2075,7 +2075,7 @@ public class imaimai_order extends Activity {
 
     private void getWebService_920cancelTrade() {
         String METHOD_NAME = "_920cancelTrade";
-        String SOAP_ACTION = "http://www.maakki.com/_920cancelTrade";
+        String SOAP_ACTION = StaticVar.namespace+"_920cancelTrade";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.toString().trim() + "M@@kki.cc" + timeStamp.toString().trim() + String.valueOf(tradeID).trim() + role_execute;
@@ -2197,7 +2197,7 @@ public class imaimai_order extends Activity {
 
     private void getWebService_getBankData() {
         String METHOD_NAME = "getBankData";
-        String SOAP_ACTION = "http://www.maakki.com/getBankData";
+        String SOAP_ACTION = StaticVar.namespace+"getBankData";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id_account.trim() + "M@@kki.cc" + timeStamp.trim() + role_getBankData;
@@ -2297,7 +2297,7 @@ public class imaimai_order extends Activity {
 
     private void getWebService_920cashierRemit() {
         String METHOD_NAME = "_920cashierRemit";
-        String SOAP_ACTION = "http://www.maakki.com/_920cashierRemit";
+        String SOAP_ACTION = StaticVar.namespace+"_920cashierRemit";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + String.valueOf(tradeID).trim() + ed_text_ra_cashier;
@@ -2392,7 +2392,7 @@ public class imaimai_order extends Activity {
     private void getWebService_920applyRefund() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "_920applyRefund";
-        String SOAP_ACTION = "http://www.maakki.com/_920applyRefund";
+        String SOAP_ACTION = StaticVar.namespace+"_920applyRefund";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.toString().trim() + "M@@kki.cc" + timeStamp.toString().trim() + String.valueOf(tradeID).trim();
@@ -2498,7 +2498,7 @@ public class imaimai_order extends Activity {
     private void getWebService_920cashierConfirm() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "_920cashierConfirm";
-        String SOAP_ACTION = "http://www.maakki.com/_920cashierConfirm";
+        String SOAP_ACTION = StaticVar.namespace+"_920cashierConfirm";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + String.valueOf(tradeID).trim();
@@ -2594,7 +2594,7 @@ public class imaimai_order extends Activity {
     private void getWebService_confirm920Trade() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "confirm920Trade";
-        String SOAP_ACTION = "http://www.maakki.com/confirm920Trade";
+        String SOAP_ACTION = StaticVar.namespace+"confirm920Trade";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + String.valueOf(tradeID).trim();
@@ -2659,7 +2659,7 @@ public class imaimai_order extends Activity {
     private void getWebService_920Refund() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "_920Refund";
-        String SOAP_ACTION = "http://www.maakki.com/_920Refund";
+        String SOAP_ACTION =StaticVar.namespace+"_920Refund";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + String.valueOf(tradeID).trim();
@@ -2755,7 +2755,7 @@ public class imaimai_order extends Activity {
     private void getWebService_RemitToiMaimai() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "RemitToiMaimai";
-        String SOAP_ACTION = "http://www.maakki.com/RemitToiMaimai";
+        String SOAP_ACTION = StaticVar.namespace+"RemitToiMaimai";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "M@@kki.cc" + timeStamp.trim() + String.valueOf(tradeID).trim();
@@ -2855,7 +2855,7 @@ public class imaimai_order extends Activity {
         days = 60;
 
         String METHOD_NAME = "get920TradeList";
-        String SOAP_ACTION = "http://www.maakki.com/get920TradeList";
+        String SOAP_ACTION = StaticVar.namespace+"get920TradeList";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.toString().trim() + "M@@kki.cc" + timeStamp.toString().trim() + role_getTradeInfo + String.valueOf(days);

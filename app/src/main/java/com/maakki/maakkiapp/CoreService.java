@@ -83,7 +83,7 @@ public class CoreService extends Service {
     private static final int DAEMON_SLEEP_INTERVAL = 1000 * 20;
     private static final int intervalMessageTime = 500;
     private Long intervalTime = 0L;
-    private static final String HUB_URL = StaticVar.webURL+"/";
+    private static final String HUB_URL = StaticVar.webURL;
     private static final String HUB_NAME = "maakkiHub";
     private static final String HUB_Method_DisConnection = "userDisConnected";
     private static final String HUB_AsyncStoreData = "AsyncStoreData";
@@ -105,8 +105,8 @@ public class CoreService extends Service {
     private static final String HUB_Method_Reconnected = "reconnected";
     private static final String HUB_chat_public_Send = "chat_public";
     Bitmap remote_picture;
-    private static String NAMESPACE = "http://www.maakki.com/";
-    private static String URL_WS = StaticVar.webURL+"/WebService.asmx";
+    private static String NAMESPACE = StaticVar.namespace;
+    private static String URL_WS = StaticVar.webURL+"WebService.asmx";
     static String errMsg,errCode;
     //Alarm alarm = new Alarm();
     Boolean isVibrate, isDisplay, isNotify, isSound;
@@ -352,7 +352,7 @@ public class CoreService extends Service {
                 cName = "";
                 //String msgType = msg[0];
                 NotifySender = sender;
-                redUrl = StaticVar.webURL+"/" + notifyUrl;
+                redUrl = StaticVar.webURL + notifyUrl;
                 //mNotificationId++;
                 StatusBarNotifications("inform");
 
@@ -721,7 +721,7 @@ public class CoreService extends Service {
             //Boolean isChatPubic=sharedPrefs.getBoolean("chat_public", true);
             nContentTitle = "";
             MessageType = 0;
-            String pic_url =StaticVar.webURL+ "/image/icon.png";
+            String pic_url =StaticVar.webURL+ "image/icon.png";
             Intent intent = new Intent(getApplicationContext(), WebMain2.class);
             Bundle bundle = new Bundle();
             bundle.putString("mName", mName);
@@ -781,7 +781,7 @@ public class CoreService extends Service {
                         remote_picture = BitmapFactory.decodeResource(getApplicationContext().getResources(),
                                 R.drawable.redenicon);
                         MessageType = 12;
-                        redUrl = StaticVar.webURL+"/MCoins/MCoinsQuery.aspx";
+                        redUrl = StaticVar.webURL+"MCoins/MCoinsQuery.aspx";
                         isNotify = sharedPrefs.getBoolean("sponsor_notification", true);
                         //intent = new Intent(getApplicationContext(), PreNotificationList.class);
                     } else {
@@ -832,7 +832,7 @@ public class CoreService extends Service {
                     }
                     break;
                 case "admin_receiver":
-                    redUrl = StaticVar.webURL+"/community/ecard.aspx?mid=" + cMemID;
+                    redUrl = StaticVar.webURL+"community/ecard.aspx?mid=" + cMemID;
                     nContentTitle = mName + "，系统通知你：";
                     //nMessage=cName+"："+nMessage;
                     if (nMessage.contains("成为BO")) {
@@ -857,7 +857,7 @@ public class CoreService extends Service {
                             nMessage = notifier[2] + nMessage;
                         }
                         if (redUrl.equals("")) {
-                            redUrl = StaticVar.webURL+"/community/NotifyMain.aspx";
+                            redUrl = StaticVar.webURL+"community/NotifyMain.aspx";
                             MessageType = 4;
 
                         } else if (redUrl.contains("/community/FriendList.aspx?act_type=Invite")) {
@@ -900,7 +900,7 @@ public class CoreService extends Service {
                 case "MGSinform":
                     cpicfile = "00003.jpg";
                     isNotify = sharedPrefs.getBoolean("mgs_notification", true);
-                    redUrl = StaticVar.webURL+"/MGS/MGSMainpage.aspx";
+                    redUrl = StaticVar.webURL+"MGS/MGSMainpage.aspx";
                     nContentTitle = mName + "，MGS通知你：";
                     MessageType = 6;
                     break;
@@ -925,7 +925,7 @@ public class CoreService extends Service {
                     nMessage = nMessage.split(":")[6];
                 }
                 if (!cpicfile.equals("00003.jpg")) {
-                    pic_url = StaticVar.webURL+"/ashx/showImage.ashx?file_id=" + cpicfile + "&width=40&height=40&forcibly=Y&dimg=Y";
+                    pic_url = StaticVar.webURL+"ashx/showImage.ashx?file_id=" + cpicfile + "&width=40&height=40&forcibly=Y&dimg=Y";
                     if (MessageType != 12) {
                         try {
                             remote_picture = BitmapFactory.decodeStream(
@@ -1453,7 +1453,7 @@ public class CoreService extends Service {
     }
     public void MDFSponsor(Context context,String maakki_id,String target_id,String cMemID,String sponsorAmt,String iCreditPassword,String isUSD,String isAnonymous) {
         String METHOD_NAME = "MDFSponsor";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id + "MDF-M@@kki.cc" + timeStamp.trim() + target_id + sponsorAmt + iCreditPassword;

@@ -71,9 +71,9 @@ public class Open_IA extends Activity {
             tv_selected_no,tv_area,tv_locality,tv_sublocality,tv_cashin_cashier,tv_confirm_order_admin,tv_orderno,tv_RemittanceTime,tv_RemittanceTime_Cashier ,tv_cancel,tv_cancel_cashier,tv_cancel_admin,tv_RemittanceInfo, tv_report, tv_report_cashier, tv_BankInfo, tv_NextStepTime, tv_NextStep, tv_location, tv_result, tv_getVerificode;
     private EditText et_account, et_nickname, et_password, et_password2, et_phonenumber, et_verificode, et_introducer;
     private boolean isSpecific,is12,is50,is42,is10,is11,is20,is40,is41,is72338,istoday,isyesterday,isArea,isLocality,isSublocality,isn50,is0, is17142,hasPasswordChecked, hasPhonenumberChecked, hasVericode, hasIntroducerChecked;
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL =  StaticVar.webURL+"/WebServiceIA.asmx";
-    private final String URL_WS =  StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL =  StaticVar.webURL+"WebServiceIA.asmx";
+    private final String URL_WS =  StaticVar.webURL+"WebService.asmx";
     private Spinner spinner;
     private EditText et_remittance_name_cashier, et_remittance_name, et_remittance_account, et_remittance_account_cashier;
     private List<_IAApplyData> listIAApplyData;
@@ -1409,7 +1409,7 @@ public class Open_IA extends Activity {
     private void getIAApplyList() {
         //Create request
         String METHOD_NAME = "getIAApplyList";
-        String SOAP_ACTION = "http://www.maakki.com/getIAApplyList";
+        String SOAP_ACTION = StaticVar.namespace+"getIAApplyList";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id + "IA-M@@kki.cc" + timeStamp.trim() + role;
@@ -1568,7 +1568,7 @@ public class Open_IA extends Activity {
     private void IAApplyConfirm() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "IAApplyConfirm";
-        String SOAP_ACTION = "http://www.maakki.com/IAApplyConfirm";
+        String SOAP_ACTION = StaticVar.namespace+"IAApplyConfirm";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "IA-M@@kki.cc" + timeStamp.trim() + String.valueOf(apply_id).trim();
@@ -1631,7 +1631,7 @@ public class Open_IA extends Activity {
     private void getVerificationCode() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getVerificationCode";
-        String SOAP_ACTION = "http://www.maakki.com/getVerificationCode";
+        String SOAP_ACTION = StaticVar.namespace+"getVerificationCode";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String phone = et_phonenumber.getText().toString();
@@ -1731,7 +1731,7 @@ public class Open_IA extends Activity {
     private void validIAReferral() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "validIAReferral";
-        String SOAP_ACTION = "http://www.maakki.com/validIAReferral";
+        String SOAP_ACTION = StaticVar.namespace+"validIAReferral";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         request.addProperty("maakki_id", et_introducer.getText().toString().trim());
@@ -1814,7 +1814,7 @@ public class Open_IA extends Activity {
     private void validMaakkiAccount() {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "validMaakkiAccount";
-        String SOAP_ACTION = "http://www.maakki.com/validMaakkiAccount";
+        String SOAP_ACTION = StaticVar.namespace+"validMaakkiAccount";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         //timeStamp = String.valueOf(new Date().getTime());
         request.addProperty("maakki_account", et_account.getText().toString().trim());
@@ -1924,7 +1924,7 @@ public class Open_IA extends Activity {
 
     private void applyNewIA() {
         String METHOD_NAME = "applyNewIA";
-        String SOAP_ACTION = "http://www.maakki.com/applyNewIA";
+        String SOAP_ACTION = StaticVar.namespace+"applyNewIA";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String maakki_account = et_account.getText().toString().trim();
@@ -2067,7 +2067,7 @@ public class Open_IA extends Activity {
 
     private void getIAApplyInfo(String role, String act, int apply_id) {
         String METHOD_NAME = "getIAApplyInfo";
-        String SOAP_ACTION = "http://www.maakki.com/getIAApplyInfo";
+        String SOAP_ACTION = StaticVar.namespace+"getIAApplyInfo";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id + "IA-M@@kki.cc" + timeStamp.trim() + String.valueOf(apply_id).trim() + act + role;
@@ -2306,7 +2306,7 @@ public class Open_IA extends Activity {
 
     private void IACashierConfirm() {
         String METHOD_NAME = "IACashierConfirm";
-        String SOAP_ACTION = "http://www.maakki.com/IACashierConfirm";
+        String SOAP_ACTION = StaticVar.namespace+"IACashierConfirm";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "IA-M@@kki.cc" + timeStamp.trim() + String.valueOf(apply_id).trim();
@@ -2408,7 +2408,7 @@ public class Open_IA extends Activity {
 
     private void IACashierRemit() {
         String METHOD_NAME = "IACashierRemit";
-        String SOAP_ACTION = "http://www.maakki.com/IACashierRemit";
+        String SOAP_ACTION = StaticVar.namespace+"IACashierRemit";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.trim() + "IA-M@@kki.cc" + timeStamp.trim() + String.valueOf(apply_id).trim() + ed_text_ra_cashier;
@@ -2516,7 +2516,7 @@ public class Open_IA extends Activity {
 
     private void IAApplyCancel() {
         String METHOD_NAME = "IAApplyCancel";
-        String SOAP_ACTION = "http://www.maakki.com/IAApplyCancel";
+        String SOAP_ACTION = StaticVar.namespace+"IAApplyCancel";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.toString().trim() + "IA-M@@kki.cc" + timeStamp.trim() + String.valueOf(apply_id).trim() + role_execute;
@@ -2634,7 +2634,7 @@ public class Open_IA extends Activity {
 
     private void getWebService_getBankData() {
         String METHOD_NAME = "getBankData";
-        String SOAP_ACTION = "http://www.maakki.com/getBankData";
+        String SOAP_ACTION = StaticVar.namespace+"getBankData";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id_account.trim() + "M@@kki.cc" + timeStamp.trim() + role_getBankData;
@@ -2734,7 +2734,7 @@ public class Open_IA extends Activity {
 
     private void ApplicantRemittanceUpdate() {
         String METHOD_NAME = "ApplicantRemittanceUpdate";
-        String SOAP_ACTION = "http://www.maakki.com/ApplicantRemittanceUpdate";
+        String SOAP_ACTION = StaticVar.namespace+"ApplicantRemittanceUpdate";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         timeStamp = String.valueOf(new Date().getTime());
         String encryptStr = maakki_id.toString().trim() + "IA-M@@kki.cc" + timeStamp.toString().trim() + String.valueOf(apply_id).trim() + ed_text_ra;

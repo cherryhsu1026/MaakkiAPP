@@ -62,9 +62,9 @@ import java.util.List;
  */
 
 public class FriendList extends AppCompatActivity {
-    private String redUrl =  StaticVar.webURL+"/community/ecard.aspx";
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL =  StaticVar.webURL+"/WebService.asmx";
+    private String redUrl =  StaticVar.webURL+"community/ecard.aspx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL =  StaticVar.webURL+"WebService.asmx";
     private ArrayList ignoreList;
     private RelativeLayout rl_top,RL_nothing;
     private Toolbar myToolbar;
@@ -566,7 +566,7 @@ public class FriendList extends AppCompatActivity {
             //holder.image_icon.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.colorTitleText));
             String title = "";
             String mpicfile = f.getPicfilePath();
-            String pic_url = StaticVar.webURL+"/ashx/showImage.ashx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
+            String pic_url = StaticVar.webURL+"ashx/showImage.ashx?file_id=" + mpicfile + "&width=45&height=45&forcibly=Y&dimg=Y";
             imageLoader.displayImage(pic_url, holder.image_icon);
             lasttime_ChatToThisOne = f.getLastChatTime();
             int count = chatDAO.getCountByContactIDSinceLastGetin(String.valueOf(f.getMemid()), lasttime_ChatToThisOne);
@@ -830,7 +830,7 @@ public class FriendList extends AppCompatActivity {
 
     private Bitmap DownloadImagetoBitmap(Friend friend) {
         Bitmap remote_picture = null;
-        String pic_url = StaticVar.webURL+"/ashx/showImage.ashx?file_id=" + friend.getPicfilePath() + "&width=40&height=40&forcibly=Y&dimg=Y";
+        String pic_url = StaticVar.webURL+"ashx/showImage.ashx?file_id=" + friend.getPicfilePath() + "&width=40&height=40&forcibly=Y&dimg=Y";
         try {
             remote_picture = BitmapFactory.decodeStream(
                     (InputStream) new URL(pic_url).getContent());
@@ -859,7 +859,7 @@ public class FriendList extends AppCompatActivity {
     public void friendAction(String actType, String friend_id) {
         //Create
         String METHOD_NAME = "friendAction";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String MemID = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key1, "");
         String timeStamp = String.valueOf(new Date().getTime());
@@ -1152,7 +1152,7 @@ public class FriendList extends AppCompatActivity {
         errMsg="";
         newlist = new ArrayList<Friend>();
         String METHOD_NAME = "searchMember";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION =StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String MemID = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key1, "");
         String timeStamp = String.valueOf(new Date().getTime());
@@ -1354,7 +1354,7 @@ public class FriendList extends AppCompatActivity {
         newlist = new ArrayList<Friend>();
         this.getType = getType;
         String METHOD_NAME = "getFriend";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String MemID = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key1, "");
         String timeStamp = String.valueOf(new Date().getTime());
@@ -1465,7 +1465,7 @@ public class FriendList extends AppCompatActivity {
         //Create request get920TradeInfo(int maakki_id, int tradeID, Int64 timeStamp, String identifyStr)
         friend=new Friend();
         String METHOD_NAME = "getMemberProfile";
-        String SOAP_ACTION = "http://www.maakki.com/" + METHOD_NAME;
+        String SOAP_ACTION = StaticVar.namespace + METHOD_NAME;
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String timeStamp = String.valueOf(new Date().getTime());
         //String target_maakki_id="0";

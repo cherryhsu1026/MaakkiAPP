@@ -55,8 +55,8 @@ import java.util.List;
  */
 
 public class POS_MainActivity extends AppCompatActivity {
-    private final String NAMESPACE = "http://www.maakki.com/";
-    private final String URL = StaticVar.webURL+"/WebService.asmx";
+    private final String NAMESPACE = StaticVar.namespace;
+    private final String URL = StaticVar.webURL+"WebService.asmx";
     Button btn;
     TextView tv_sum;
     //FloatingActionButton fab_cashier,fab_add;
@@ -435,7 +435,7 @@ public class POS_MainActivity extends AppCompatActivity {
     private void getWebService_getBOData() {
         //Create request(int bo_id, Int64 timeStamp, String identifyStr)
         String METHOD_NAME = "getBOData";
-        String SOAP_ACTION = StaticVar.webURL+"/getBOData";
+        String SOAP_ACTION = StaticVar.namespace+"getBOData";
         //String METHOD_NAME = "getOnlineList";
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
         String bo_maakkiid = SharedPreferencesHelper.getSharedPreferencesString(getApplicationContext(), SharedPreferencesHelper.SharedPreferencesKeys.key0, "");
