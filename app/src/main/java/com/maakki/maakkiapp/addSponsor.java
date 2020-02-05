@@ -85,7 +85,7 @@ public class addSponsor extends Activity {
         activityscorerecord=new ActivityScoreRecord();
         asrDAO=new ActivityScoreRecordDAO(context);
         rateArr = new ArrayList<>();
-        tv_targetStr = (TextView) findViewById(R.id.tv_targetStr);
+        tv_targetStr = findViewById(R.id.tv_targetStr);
 
         AsyncCallWS_getExchangeRate getExchangeRateTask = new AsyncCallWS_getExchangeRate();
         getExchangeRateTask.execute();
@@ -94,26 +94,26 @@ public class addSponsor extends Activity {
         isFriendlimited=false;
         isSilent=false;
         isTarget = true;
-        checkBox_anonymous = (CheckBox) findViewById(R.id.checkbox_anonymous);
+        checkBox_anonymous = findViewById(R.id.checkbox_anonymous);
         checkBox_anonymous.setOnCheckedChangeListener(chklistener_anonymous);
         //
-        checkbox_friendlimited= (CheckBox) findViewById(R.id.checkbox_friendlimited);
+        checkbox_friendlimited= findViewById(R.id.checkbox_friendlimited);
         checkbox_friendlimited.setOnCheckedChangeListener(chklistener_friendlimited);
         //
-        checkbox_silent= (CheckBox) findViewById(R.id.checkbox_silent);
+        checkbox_silent= findViewById(R.id.checkbox_silent);
         checkbox_silent.setOnCheckedChangeListener(chklistener_silent);
         //isSpecific = false;
-        LL_addSponsor = (LinearLayout) findViewById(R.id.LL_addSponsor);
-        LL_Application = (LinearLayout) findViewById(R.id.LL_Application);
-        ivTarget = (ImageView) findViewById(R.id.ivTarget);
-        iv_clear = (ImageView) findViewById(R.id.iv_clear);
-        tv_target = (TextView) findViewById(R.id.tv_target);
-        tv_envelope_no = (TextView) findViewById(R.id.tv_envelope_no);
-        et_envelope_no = (EditText) findViewById(R.id.et_envelope_no);
-        tv_envelope_piece = (TextView) findViewById(R.id.tv_envelope_piece);
-        tv_piece = (TextView) findViewById(R.id.tv_piece);
-        tv_greeting = (TextView) findViewById(R.id.tv_greeting);
-        et_slogan = (EditText) findViewById(R.id.et_greeting);
+        LL_addSponsor = findViewById(R.id.LL_addSponsor);
+        LL_Application = findViewById(R.id.LL_Application);
+        ivTarget = findViewById(R.id.ivTarget);
+        iv_clear = findViewById(R.id.iv_clear);
+        tv_target = findViewById(R.id.tv_target);
+        tv_envelope_no = findViewById(R.id.tv_envelope_no);
+        et_envelope_no = findViewById(R.id.et_envelope_no);
+        tv_envelope_piece = findViewById(R.id.tv_envelope_piece);
+        tv_piece = findViewById(R.id.tv_piece);
+        tv_greeting = findViewById(R.id.tv_greeting);
+        et_slogan = findViewById(R.id.et_greeting);
         et_slogan.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -149,14 +149,14 @@ public class addSponsor extends Activity {
                 setView(sponsorType);
             }
         });
-        iv_back = (ImageView) findViewById(R.id.iv_back);
+        iv_back = findViewById(R.id.iv_back);
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        et_iCredits = (EditText) findViewById(R.id.et_iCredits);
+        et_iCredits = findViewById(R.id.et_iCredits);
         et_iCredits.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -189,7 +189,7 @@ public class addSponsor extends Activity {
                 }
             }
         });
-        tv_currency = (TextView) findViewById(R.id.tv_currency);
+        tv_currency = findViewById(R.id.tv_currency);
         tv_currency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -206,8 +206,8 @@ public class addSponsor extends Activity {
                 }
             }
         });
-        et_target = (EditText) findViewById(R.id.et_target);
-        tv_nickname = (TextView) findViewById(R.id.tv_nickname);
+        et_target = findViewById(R.id.et_target);
+        tv_nickname = findViewById(R.id.tv_nickname);
         et_target.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -219,7 +219,7 @@ public class addSponsor extends Activity {
             }
         });
 
-        et_password = (EditText) findViewById(R.id.et_password);
+        et_password = findViewById(R.id.et_password);
         et_password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -233,13 +233,13 @@ public class addSponsor extends Activity {
                 }
             }
         });
-        RL_CB = (RelativeLayout) findViewById(R.id.RL_CB);
-        rl_footer = (RelativeLayout) findViewById(R.id.rl_footer);
+        RL_CB = findViewById(R.id.RL_CB);
+        rl_footer = findViewById(R.id.rl_footer);
         isDown = false;
-        RL_bottom = (RelativeLayout) findViewById(R.id.RL_bottom);
-        checkBox = (CheckBox) findViewById(R.id.checkbox);
+        RL_bottom = findViewById(R.id.RL_bottom);
+        checkBox = findViewById(R.id.checkbox);
         checkBox.setOnCheckedChangeListener(chklistener);
-        tv_checkrules = (TextView) findViewById(R.id.tv_checkrules);
+        tv_checkrules = findViewById(R.id.tv_checkrules);
         RL_CB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -689,7 +689,8 @@ public class addSponsor extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -799,7 +800,8 @@ public class addSponsor extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -943,7 +945,8 @@ public class addSponsor extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -1016,7 +1019,8 @@ public class addSponsor extends Activity {
 
             androidHttpTransport.call(SOAP_ACTION, envelope);
             soapPrimitive = (SoapPrimitive) envelope.getResponse();
-            String tmp = soapPrimitive.toString();
+            //String tmp = soapPrimitive.toString();
+            String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
             //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
             tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
             JSONObject json_read;
@@ -1193,7 +1197,8 @@ public class addSponsor extends Activity {
         } catch (Exception e) {
             errMsg = e.getMessage();
         }
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -1301,7 +1306,8 @@ public class addSponsor extends Activity {
         } catch (Exception e) {
             Log.e("Error", e.getMessage());
         }
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -1577,8 +1583,9 @@ public class addSponsor extends Activity {
         } catch (Exception e) {
             errMsg += e.getMessage();
         }
-        String tmp = soapPrimitive.toString();
         //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
+
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;

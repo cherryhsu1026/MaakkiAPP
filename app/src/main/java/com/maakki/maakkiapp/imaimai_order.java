@@ -706,9 +706,8 @@ public class imaimai_order extends Activity {
         } catch (Exception e) {
             Log.e("Error", e.getMessage());
         }
-
-
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -789,8 +788,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -934,8 +933,8 @@ public class imaimai_order extends Activity {
         } catch (Exception e) {
             Log.e("Error", e.getMessage());
         }
-
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -1993,7 +1992,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -2223,7 +2223,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -2327,7 +2328,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -2419,7 +2421,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -2525,7 +2528,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -2621,7 +2625,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -2686,7 +2691,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -2782,7 +2788,8 @@ public class imaimai_order extends Activity {
             Log.e("Error", e.getMessage());
         }
 
-        String tmp = soapPrimitive.toString();
+        //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
@@ -2882,8 +2889,8 @@ public class imaimai_order extends Activity {
         } catch (Exception e) {
             Log.e("Error", e.getMessage());
         }
-        String tmp = soapPrimitive.toString();
         //String tmp = soapPrimitive.toString();
+        String tmp = soapPrimitive == null ? "" : soapPrimitive.toString();
         //一開始從網路接收通常為String型態,tmp為接收到的String,為避免串流內有其他資料只需抓取{}間的內容
         tmp = tmp.substring(tmp.indexOf("{"), tmp.lastIndexOf("}") + 1);
         JSONObject json_read;
